@@ -1,13 +1,7 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-
 import "./card.css";
 
 export default function ActionAreaCard(props) {
@@ -89,7 +83,7 @@ export default function ActionAreaCard(props) {
     // </Card>
     <ul className="cards">
     <li>
-      <a href="" className="card">
+      <div  className="card">
         <img src={props.image} className="card__image" alt="" />
         <div className="card__overlay">
           <div className="card__header">
@@ -110,7 +104,7 @@ export default function ActionAreaCard(props) {
           </div>
           <p className="card__description">{props.description}</p>
         </div>
-      </a>      
+      </div>      
     </li>
   </ul>
 
