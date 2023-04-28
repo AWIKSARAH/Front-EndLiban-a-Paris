@@ -16,16 +16,3 @@ export default function AllRouts() {
     </div>
   )
 }
-
-          {/* <Route path="/test" element={(
-            <div>
-              <h2>Test page</h2>
-            </div>
-          )} /> */}
-
-          {/* <Route path="/redirect" element={<Navigate to="/about" />} /> */}
-
-          {/* <Route 
-            path="/checkout" 
-            element={false ? <Navigate to="/products" /> : <p>checkout</p>}
-          /> */}
