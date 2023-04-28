@@ -1,9 +1,12 @@
-import './App.css';
-import Card from './components/listingcard'
+import "./App.css";
+import Layout from "./components/layout";
+import Card from "./components/listingcard";
 function App() {
   return (
     <div className="App">
-    <Card></Card>
+      <Layout>
+        <Card></Card>
+      </Layout>
     </div>
   );
 }
