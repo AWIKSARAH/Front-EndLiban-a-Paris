@@ -4,9 +4,25 @@
     grid-column-gap: 1%;
     grid-row-gap: 1%;
 }
+.card--listing_title{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin: 3vw;
+}
+.card--listing_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media (max-width:979px){
     .card--listing{
     grid-template-columns: repeat(3, 1fr);
+
+    }
+    .card--listing_title{
+margin: 1vw;
 
     }
 }
@@ -17,6 +33,10 @@
     }
 }
 @media (max-width:480px){
+.card--listing_title{
+    justify-content: center;;
+flex-direction: column;
+}
     .card--listing{
     grid-template-columns: repeat(1, 1fr);
     }
