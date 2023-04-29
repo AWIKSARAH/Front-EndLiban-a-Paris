@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSearch, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {  FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './header.css';
 import Logo from "../../img/logo.png";
 import Logo2 from "../../img/logo2.png";
@@ -21,7 +21,7 @@ export default function Header() {
         </div>
         <div className='navbar-social-container' >
           <div className='social-media-icon'>
-            <a href='#'>< FaFacebook className="social-icon" /></a>
+            <a href='#'><FaFacebook className="social-icon" /></a>
             <a href='#'><FaTwitter className="social-icon" /></a>
             <a href=''> <FaInstagram className="social-icon" /></a>
           </div>
