@@ -23,19 +23,19 @@ export default function Header() {
         </div>
         <div className="navbar-social-container">
           <div className="social-media-icon">
-            <Link href="#">
+            <Link  to="#">
               <FaFacebook className="social-icon" />
             </Link>
-            <Link href="#">
+            <Link  to="#">
               <FaTwitter className="social-icon" />
             </Link>
-            <Link href="">
+            <Link  to="">
               {" "}
               <FaInstagram className="social-icon" />
             </Link>
           </div>
           <div className="navbar-social">
-            <Link href="">À propos</Link>
+            <Link  to="">À propos</Link>
             <button className="contact-us-button">Contact Us</button>
           </div>
         </div>
@@ -55,28 +55,28 @@ export default function Header() {
         <img src={Logo2} alt="logo" width={300}></img>
       </div>
       <div className="last-header-navbar">
-        <Link href="/">Home</Link>
+        <Link  to="/">Home</Link>
 
         <div className="dropdown">
-          <Link href="#" className="dropbtn-agenda">
+          <Link  to="#" className="dropbtn-agenda">
             {" "}
             Event
           </Link>
           <div className="dropdown-content">
-            <Link href="#">Evenements</Link>
-            <Link href="#">Activities</Link>
-            <Link href="#">Soirees</Link>
+            <Link  to="#">Evenements</Link>
+            <Link  to="#">Activities</Link>
+            <Link  to="#">Soirees</Link>
           </div>
         </div>
         <div className="dropdown">
-          <Link href="/places"> Places</Link>
+          <Link to="/places"> Places</Link>
           <div className="dropdown-content">
-            <Link href="#">A</Link>
-            <Link href="#">b</Link>
-            <Link href="#">c</Link>
+            <Link  to="#">A</Link>
+            <Link  to="#">b</Link>
+            <Link  to="#">c</Link>
           </div>
         </div>
-        <Link className="dr" href="#">
+        <Link className="dr"  to="#">
           Aboutus
         </Link>
       </div>

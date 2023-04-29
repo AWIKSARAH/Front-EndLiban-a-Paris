@@ -44,8 +44,28 @@
 }
 .last-header-navbar  a {
   color: white;
-
+  font-size: 1.3rem;
+  font-weight: 400;
   text-decoration: none;
+}
+.last-header-navbar a::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0;
+  top: 5px;
+  background: transparent;
+  transition: all 0.6s;
+}
+.last-header-navbar a:hover::after {
+  width: 100%;
+  background: white;
+}
+.last-header-navbar div {
+  background-color: #356940;
+  color: white;
+  font-size: 16px;
 }
 .contact-us-button {
   border-radius: 20px;
@@ -80,20 +100,6 @@
 .first-p-logo {
   color: white;
 }
-.last-header-navbar a::after {
-  content: "";
-  display: block;
-  margin: auto;
-  height: 3px;
-  width: 0;
-  top: 5px;
-  background: transparent;
-  transition: all 0.6s;
-}
-.last-header-navbar a:hover::after {
-  width: 100%;
-  background: white;
-}
 .social-media-icon a:hover {
   color: #e6e6e6;
   transform: scale(1.1);
@@ -101,11 +107,6 @@
 }
 
 
-.last-header-navbar div {
-  background-color: #356940;
-  color: white;
-  font-size: 16px;
-}
 
 .dropdown {
   position: relative;
