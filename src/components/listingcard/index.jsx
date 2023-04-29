@@ -23,7 +23,7 @@ function ListingCard(props) {
           onChange={handlePageChange} // adding onChange event
         />
       </div>
-      <div className="card--listing" style={{ display: "grid" }}>
+      <div className="card--listing">
         {props.data.map((place) => {
           const { id, image, title, description, location } = place;
           return (
@@ -38,18 +38,17 @@ function ListingCard(props) {
         })}
       </div>
       <div className="card--listing_footer">
-
-<Pagination
- shape="rounded"
- color="success"
- page={props.currentPage}
- count={props.pageCount || 1}
- showFirstButton
- showLastButton
- size="large"
- onChange={handlePageChange} // adding onChange event
-/>
- </div>
+        <Pagination
+          shape="rounded"
+          color="success"
+          page={props.currentPage}
+          count={props.pageCount || 1}
+          showFirstButton
+          showLastButton
+          size="large"
+          onChange={handlePageChange} // adding onChange event
+        />
+      </div>
     </div>
   );
 }
