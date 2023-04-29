@@ -42,7 +42,7 @@
   background-attachment: initial;
   background-origin: initial;
   background-clip: initial;
-  background-color: #bad679;
+  background-color: #4f7f33;
 }
 
 .contact_us_2 .responsive-container-block {
@@ -52,10 +52,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 50px;
-  margin-left: auto;
+ margin: 0 auto;
   padding-top: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
@@ -84,7 +81,7 @@
 }
 
 .contact_us_2 .container-block.form-wrapper {
-  background-color: white;
+  background-color: #f8ffe9;
   max-width: 799px;
   text-align: center;
   padding-top: 50px;
@@ -92,14 +89,8 @@
   padding-bottom: 50px;
   padding-left: 40px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
+  border-radius:6px;
+  margin:0 auto;
 }
 
 .contact_us_2 .text-blk.contactus-head {
@@ -189,7 +180,7 @@
 
 .contact_us_2 .submit-btn {
   width: 98%;
-  background-color: #bad679;
+  background-color: #4f7f33;
   height: 60px;
   font-size: 20px;
   font-weight: 700;
@@ -264,9 +255,17 @@
   left: 0px;
   top: 0px;
   height: 300px;
-  background-color: #bad679;
+  background-color: #4f7f33;
 }
 
+.contact_us_2 .submit-btn:hover{
+  transform: scale(1.01);
+  background-color: #bad679;
+  transition: all .3s ease-in-out;
+}
+.contact_us_2 {
+  min-height: 100vh;
+}
 @media (max-width: 768px) {
   .contact_us_2 .submit-btn {
     width: 100%;
@@ -307,6 +306,7 @@
     margin-bottom: 0px;
     margin-left: 0px;
   }
+ 
 
   .contact_us_2 .text-blk.contactus-head {
     font-size: 30px;
