@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../img/logo.png";
 import Logo2 from "../../img/white-logo.png";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export default function Header() {
   const [isMobileNav, setIsMobileNav] = useState(false);
@@ -11,7 +11,6 @@ export default function Header() {
   const toggleMobileNav = () => {
     setIsMobileNav(!isMobileNav);
   };
-
   return (
     <div
       className={`home-wrapper-Container ${isMobileNav ? "mobile-nav" : ""}`}
@@ -36,7 +35,7 @@ export default function Header() {
           </div>
           <div className="navbar-social">
             <Link  to="">À propos</Link>
-            <button className="contact-us-button">Contact Us</button>
+            <Link className="contact-us-button" to="/contact">Contact Us</Link>
           </div>
         </div>
       </div>

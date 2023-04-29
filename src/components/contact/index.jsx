@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './contact.css';
 import emailjs from 'emailjs-com';
 
-function ContactForm() {
+function ContactPage() {
   const [formValues, setFormValues] = useState({
     firstName: '',
     lastName: '',
@@ -116,4 +116,4 @@ Feel Free when you ask, about anything. We are here anytime to reply to you!   <
       </div>
       </div>
   )}
-export default ContactForm ;
+export default ContactPage ;

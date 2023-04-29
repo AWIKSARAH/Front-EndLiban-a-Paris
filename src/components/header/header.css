@@ -1,6 +1,6 @@
 .home-wrapper-Container {
   padding: 0 10px;
-  background-color: #356940;
+  background-color: #4f7f33;
   box-shadow: #3f3f3f 1px 1px 1px 1px;
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@
   background: white;
 }
 .last-header-navbar div {
-  background-color: #356940;
+  background-color: #4f7f33;
   color: white;
   font-size: 16px;
 }
@@ -142,8 +142,8 @@
 }
 .dropdown-content a:hover {
   background-color: #ddd;
-  color: #356940;
-  border: #356940;
+  color: #4f7f33;
+  border: #4f7f33;
 }
 
 
@@ -245,7 +245,7 @@
     display: block !important;
   }
   .mobile-nav {
-    background-color: #356940;
+    background-color: #4f7f33;
     width: 100%;
     height: 100%;
   }
