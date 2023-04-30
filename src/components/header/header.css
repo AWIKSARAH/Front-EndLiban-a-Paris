@@ -25,15 +25,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 }
 
 .first-p-logo {
   color: var(--secondary);
 }
+.navbar-social-container a{
+  margin: 0 10px;
+
+}
 .social-media-icon > a {
   color: var(--secondary);
   height: 1em;
+}
+.social-media-icon{
+  height:100%;
+  border-right: 2px solid var(--accent-derv);
 }
 .navbar-social  a {
   color: var(--secondary);
