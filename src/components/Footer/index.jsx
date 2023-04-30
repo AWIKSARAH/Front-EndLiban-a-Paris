@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <div>
-      <footer>
+      <footer className="footer--container">
         <div className='row'>
           <div className='col'>
             <img src={Logo} className='logo-footer' />

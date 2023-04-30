@@ -1,4 +1,4 @@
-footer {
+.footer--container {
   width: 100%;
   bottom: 0;
   background-color: var(--primary);
@@ -8,7 +8,7 @@ footer {
   font-size: 13px;
   line-height: 20px;
 }
-.row {
+.footer--container .row {
   width: 85%;
   margin: auto;
   display: flex;
@@ -17,131 +17,132 @@ footer {
   justify-content: space-between;
   color: #ccc;
 }
-.col {
+.footer--container .col {
   flex-basis: 25%;
   padding: 10px;
 }
 
-.logo-footer {
+.footer--container .logo-footer {
   width: 75px;
   margin-bottom: 30px;
 }
-.col h3 {
+.footer--container .col h3 {
   width: fit-content;
   margin-bottom: 40px;
   position: relative;
   color: #ccc;
 }
-.email-id {
+.footer--container .email-id {
   width: fit-content;
   border-bottom: 1px solid #ccc;
   color: #ccc;
   margin: 20px 0;
 }
-ul{
-   padding: 0;
+.footer--container ul {
+  padding: 0;
 }
-ul li{
-    list-style: none;
-    margin-bottom: 12px;
+.footer--container ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.footer--container ul li a {
+  text-decoration: none;
+  color: #ccc;
+}
+.footer--container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.footer--container .col {
+  flex-basis: calc(25% - 20px);
 }
-ul li a{
-    text-decoration: none;
-    color:#ccc;
+.footer--container form {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.footer--container form > .far {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.footer--container form input {
+  width: 100%;
+  background: transparent;
+  color: #ccc;
+  border: 0;
+  outline: none;
+}
+.footer--container form button {
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+.footer--container form button .fas {
+  font-size: 16px;
+  color: #ccc;
+}
+.footer--container .social-media-icon-footer .social--footer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #ccc;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.footer--container .underline {
+  width: 100%;
+  height: 5px;
+  background-color: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  overflow: hidden;
+}
+.footer--container .underline span {
+  width: 15px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+@keyframes moving {
+  0% {
+    left: -20px;
   }
-  
-  .col {
-    flex-basis: calc(25% - 20px)
+  100% {
+    left: 100%;
   }
- form {
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom:50px ;
- }
- form >.far{
-    font-size: 18px;
-    margin-right: 10px;
- }
- form input{
-    width: 100%;
-    background: transparent;
-    color:#ccc;
-    border: 0; 
-    outline: none;   
- }
- form button {
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
- }
- form button .fas{
-    font-size: 16px;
-    color:#ccc;
-
- }
- .social-media-icon-footer .social--footer{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color:#ccc;
-    margin-right: 15px;
-    cursor: pointer;
- }
- .underline{
-    width: 100%;
-    height: 5px;
-    background-color: #767676;
-    border-radius: 3px;
-    position: absolute;
-    top: 25px;
-    left: 0;
-    overflow: hidden;
-
- }
- .underline span{
-    width: 15px;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    animation: moving 2s linear infinite;
- }
- @keyframes moving {
-    0% {left:-20px;
- }
- 100% {left:100%;
- }
 }
-.col:nth-child(2),  .col:nth-child(3){
-    flex-basis: 15%;
+.footer--container .col:nth-child(2),
+.footer--container .col:nth-child(3) {
+  flex-basis: 15%;
 }
-.col:nth-child(2) p,  .col:nth-child(3) p {
-   text-align: left;
+.footer--container .col:nth-child(2) p,
+.footer--container .col:nth-child(3) p {
+  text-align: left;
 }
- @media(max-width: 700px)
- {
-    footer{
-        bottom: unset;
-    }
-    .col{
-        flex-basis: 100%;
-    }
-    .col:nth-child(2),  .col:nth-child(3){
-        flex-basis:95%;
-    }
- }
+@media (max-width: 700px) {
+  .footer--container {
+    bottom: unset;
+  }
+  .footer--container .col {
+    flex-basis: 100%;
+  }
+  .footer--container .col:nth-child(2),
+  .footer--container .col:nth-child(3) {
+    flex-basis: 95%;
+  }
+}

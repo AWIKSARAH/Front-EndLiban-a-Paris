@@ -12,5 +12,5 @@ export const links = [
     { name: "B", path: "#" },
     { name: "C", path: "#" }
   ]},
-  { name: "About Us", path: "#" }
+  { name: "About Us", path: "/about" }
 ];
