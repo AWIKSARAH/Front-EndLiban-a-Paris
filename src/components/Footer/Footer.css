@@ -131,6 +131,9 @@ ul li a{
 .col:nth-child(2),  .col:nth-child(3){
     flex-basis: 15%;
 }
+.col:nth-child(2) p,  .col:nth-child(3) p {
+   text-align: left;
+}
  @media(maxwidth: 700px)
  {
     footer{
