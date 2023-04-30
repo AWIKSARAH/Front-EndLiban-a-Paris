@@ -4,26 +4,26 @@
 *{
   font-family: 'Nunito', sans-serif;
 }
-/* :root{
+:root{
   --primary:#CC3D3F;
   --primary-derv:#5e2e2f;
-  --secondary:#f9fff6;
+  --secondary:#f7f6f5;
   --secondary-derv:#dbf7cc;
   --accent:#2f7509;
   --accent-derv:#789767;
   --black:#2d2d2e;
   
-} */
-:root{
+}
+/* :root{
   --primary:#437c24;
   --primary-derv:#789767;
-  --secondary:#f9fff6;
+  --secondary:#f9f3ed;
   --secondary-derv:#dbf7cc;
   --accent:#CC3D3F;
   --accent-derv:#5e2e2f;
   --black:#2d2d2e;
   
-}
+} */
 body{
   background-color: var(--secondary);
 }

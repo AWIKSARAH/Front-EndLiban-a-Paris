@@ -1,7 +1,7 @@
 .home-wrapper-Container {
   gap: 20px;
   background-color: var(--primary);
-  box-shadow: #3f3f3f 1px 1px 1px 1px;
+  box-shadow: #949494 3px 3px 3px 3px;
   display: flex;
   align-items: center;
   flex-direction: column;

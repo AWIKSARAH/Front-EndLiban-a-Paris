@@ -1,146 +1,166 @@
-.css-q6liyb-MuiButtonBase-root-MuiCardActionArea-root {
-  box-shadow: 10px 10px !important;
-}
-:root {
-  --surface-color: #fff;
-  --curve: 40;
+
+
+ul {
+	margin: 0;
+	list-style: none;
 }
 
-.cards {
-  border: 0.5px solid var(--primary) !important;
-  border-radius: calc(var(--curve) * 1px);
-  box-shadow: "3px 3px 3px #00000055";
-  padding: 0;
-  list-style-type: none;
-  width: 370px;
-}
-
-.card {
+.restaurant {
   position: relative;
-  display: block;
-  height: 100%;
-  border-radius: calc(var(--curve) * 1px);
-  overflow: hidden;
-  text-decoration: none;
+  width: 378px;
+  height: 400px;
+  cursor: pointer;
+  margin-bottom: 40px;
 }
 
-.card__image {
-  width: 100%;
-  height: auto;
+.restaurant .infos_left {
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	float: left;
+	background: white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  border-radius: calc(var(--curve) * 1px);
-  background-color: var(--surface-color);
-  transform: translateY(100%);
-  transition: 0.2s ease-in-out;
+.restaurant .reservation_right {
+	position: absolute;
+	left: 70%;
+	z-index: 1;
+	width: 0%;
+	height: 100%;
+	float: right;
+	background: white;
+	overflow-x: scroll;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	transition: width 0.5s;
 }
 
-.card:hover .card__overlay {
-  transform: translateY(0);
+.restaurant .reservation_right--active {
+	overflow: hidden;
+	width: 30%;
 }
 
-.card__header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  padding: 2em;
-  border-radius: calc(var(--curve) * 1px) 0 0 0;
-  background-color: var(--surface-color);
-  transform: translateY(-100%);
-  transition: 0.2s ease-in-out;
+.restaurant .infos_left .image_container {
+	width: 100%;
+	height: 70%;
+	background-size: cover;
+	background-size: 100%;
+	background-position: center;
+	transition: background-size 0.5s;
 }
 
-.card__arc {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  z-index: 1;
+.restaurant .infos_left:hover .image_container {
+	background-size: 120%;
 }
 
-.card__arc path {
-  fill: var(--surface-color);
-  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+.restaurant .infos_left .prix_block {
+	position: absolute;
+	top: 10px;
+	left: -10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background: white;
+	padding: 5px 10px;
+	box-shadow: -6px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover .card__header {
-  transform: translateY(0);
+.restaurant .infos_left .prix_block .text_prix {
+	font-size: 15px;
+	color: rgba(0, 0, 0, 0.5);
 }
 
-.card__thumb {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.restaurant .infos_left .prix_block .prix {
+	font-size: 18px;
+	color: #30CE89;
 }
 
-.card__title {
-  font-size: 1em;
-  margin: 0 0 0.3em;
-  color: var(--primary)
-  ;
+.restaurant .infos_left .block_infos {
+	width: 100%;
+	height: 40%;
+	background: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+   box-shadow: 0px -6px 20px 0px rgba(0, 0, 0, 0.1);
+	transition: height 0.5s;
 }
 
-.card__tagline {
-  display: block;
-  margin: 1em 0;
-  font-family: "MockFlowFont";
-  font-size: 0.8em;
-  color: red;
+.restaurant .infos_left .block_infos h1 {
+	width: 50%;
+	float: left;
+	text-transform: uppercase;
+  text-align: left;
+	font-size: 18px;
+	margin: 10px 10px;
+	color: #30CE89;
 }
 
-.card__status {
-  font-size: 0.8em;
-  color: #4b4849;
+.restaurant .infos_left .block_infos .adress_block {
+	text-align: right;
+	margin: 10px 10px;
+	color: rgba(0, 0, 0, 0.5);
+	text-transform: capitalize;
 }
 
-.card__description {
-  padding: 0 2em 2em;
-  margin: 0;
-  color: rgb(26, 53, 4);
-  font-family: "MockFlowFont";
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+.restaurant .infos_left .block_infos .adress_block svg {
+	margin-right: 5px;
+	font-size: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .cards {
-   width: 49%;
-  }
-
-  .card__header {
-    padding: 1em;
-  }
-
-  .card__thumb {
-    width: 40px;
-    height: 40px;
-  }
-
-  .card__title {
-    font-size: 0.9em;
-  }
-
-  .card__tagline {
-    font-size: 0.7em;
-  }
-
-  .card__description {
-    padding: 0 1em 1em;
-  }
+.restaurant .infos_left .block_infos .adress_block .adress {
+	font-size: 15px;
 }
-@media screen and (max-width: 480px) {
-.cards{
-  width: 98%;
+
+.restaurant .infos_left .block_infos .adress_block .locate {
+	background: #30CE89;
+	color: white;
+	padding: 2px 10px;
+	border-radius: 5px;
 }
+
+
+
+.restaurant .infos_left .block_infos .description_block p {
+	text-align: justify;
+	padding: 0px 10px;
+	color: rgba(0, 0, 0, 0.8);
+	max-height: 72px;
+    text-overflow: ellipsis;
+    width: 90%;
+    display: block;
+    overflow: hidden
+}
+
+.ui-datepicker-inline {
+    display: block;
+    width: 100%;
+    height: auto;	
+	 margin-left: -5px;
+	 border: none !important;
+}
+
+.ui-datepicker table {
+	font-size: 11px;
+}
+
+.ui-datepicker-header {
+	font-size: 10px;
+	background: #30CE89;
+	color: white;
+}
+
+.ui-state-default.ui-state-active {
+	background: #30CE89 !important;
+	color: white !important;	
+}
+
+.ui-state-default.ui-state-highlight {
+	border: 2px solid #30CE89 !important;
+}
+
+.ui-state-default {
+	background: white !important;
+	border: none !important;
+	text-align: center !important;
 }
