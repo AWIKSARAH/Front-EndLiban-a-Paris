@@ -38,6 +38,9 @@ footer {
   color: #ccc;
   margin: 20px 0;
 }
+ul{
+   padding: 0;
+}
 ul li{
     list-style: none;
     margin-bottom: 12px;
@@ -118,10 +121,6 @@ ul li a{
     left: 10px;
     animation: moving 2s linear infinite;
  }
- .col .link-h3{
-    margin:38px;
-    margin-top: 10px;
- }
  @keyframes moving {
     0% {left:-20px;
  }
@@ -134,7 +133,7 @@ ul li a{
 .col:nth-child(2) p,  .col:nth-child(3) p {
    text-align: left;
 }
- @media(maxwidth: 700px)
+ @media(max-width: 700px)
  {
     footer{
         bottom: unset;
@@ -143,6 +142,6 @@ ul li a{
         flex-basis: 100%;
     }
     .col:nth-child(2),  .col:nth-child(3){
-        flex-basis: 100%;
+        flex-basis:95%;
     }
  }
