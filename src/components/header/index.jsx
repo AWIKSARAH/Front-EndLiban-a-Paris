@@ -3,13 +3,28 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../img/logo.png";
 import Logo2 from "../../img/white-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { links } from "./links";
 
 export default function Header() {
   const [isMobileNav, setIsMobileNav] = useState(false);
+  const location = useLocation();
 
   const toggleMobileNav = () => {
     setIsMobileNav(!isMobileNav);
+  };
+  const isActive = (link) => {
+    if (link.path === location.pathname) {
+      return "active";
+    }
+    if (link.dropdown) {
+      link.dropdown.forEach((e) => {
+        if (e.path === location.pathname) {
+          return "active";
+        }
+      });
+    }
+    return " ";
   };
   return (
     <div
@@ -56,32 +71,22 @@ export default function Header() {
         <img src={Logo2} alt="logo" width={300}></img>
       </div>
       <div className="last-header-navbar">
-        <Link to="/">Home</Link>
-        <Link to="/">Blog</Link>
-        <Link to="/">Services</Link>
-
-        <div className="dropdown">
-          <Link to="#" className="dropbtn-agenda">
-            {" "}
-            Event
-          </Link>
-          <div className="dropdown-content">
-            <Link to="#">Evenements</Link>
-            <Link to="#">Activities</Link>
-            <Link to="#">Soirees</Link>
+        {links.map((link, index) => (
+          <div key={index} className={link.dropdown ? "dropdown" : null}>
+            <Link to={link.path} className={isActive(link)}>
+              {link.name}
+            </Link>
+            {link.dropdown && (
+              <div className="dropdown-content">
+                {link.dropdown.map((subLink, subIndex) => (
+                  <Link key={subIndex} to={subLink.path}>
+                    {subLink.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-        <div className="dropdown">
-          <Link to="/places"> Places</Link>
-          <div className="dropdown-content">
-            <Link to="#">A</Link>
-            <Link to="#">b</Link>
-            <Link to="#">c</Link>
-          </div>
-        </div>
-        <Link className="dr" to="#">
-          About Us
-        </Link>
+        ))}
       </div>
     </div>
   );

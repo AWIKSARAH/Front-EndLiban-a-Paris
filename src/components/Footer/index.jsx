@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -28,7 +29,7 @@ export default function Footer() {
         <div className='row'>
           <div className='col'>
             <img src={Logo} className='logo-footer' />
-            <p>A newsletter is a powerful marketing tool that businesses can use to stay connected with their aud</p>
+            <p>A newsletter is Link powerful marketing tool that businesses can use to stay connected with their aud</p>
           </div>
           <div className='col'>
             <h3>
@@ -47,19 +48,19 @@ export default function Footer() {
             <ul>
               <li>
                 {' '}
-                <a href=''>Home</a>
+                <Link to=''>Home</Link>
               </li>
               <li>
                 {' '}
-                <a href=''>Event</a>
+                <Link to=''>Event</Link>
               </li>
               <li>
                 {' '}
-                <a href=''>Place</a>
+                <Link to=''>Place</Link>
               </li>
               <li>
                 {' '}
-                <a href=''>About us</a>
+                <Link to=''>About us</Link>
               </li>
             </ul>
           </div>
@@ -82,21 +83,21 @@ export default function Footer() {
             </form>
             <div className='social-media-icon-footer'>
               <i>
-                <a href='#'>
+                <Link to='#'>
                   <FaFacebook className='social--footer' />
-                </a>
+                </Link>
               </i>
               <i>
                 {' '}
-                <a href='#'>
+                <Link to='#'>
                   <FaTwitter className='social--footer' />
-                </a>
+                </Link>
               </i>
               <i>
-                <a href=''>
+                <Link to=''>
                   {' '}
                   <FaInstagram className='social--footer' />
-                </a>
+                </Link>
               </i>
             </div>
           </div>

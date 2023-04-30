@@ -108,7 +108,10 @@
   color: var(--secondary);
   font-size: 16px;
 }  
-
+.last-header-navbar a.active::after{
+  width: 100%;
+  background: var(--secondary);
+}
 
 .dropdown {
   position: relative;
@@ -239,6 +242,8 @@
     display: none !important;
   }
   .home-wrapper-Container {
+    padding-top: 10px;
+    padding-bottom: 0;
     width: 100%;
   }
   .home-wrapper-Container button {
@@ -264,5 +269,8 @@
   .last-header-navbar {
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .middle-header-container img{
+    width: 200px;
   }
 }
