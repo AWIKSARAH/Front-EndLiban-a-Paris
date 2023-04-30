@@ -17,7 +17,7 @@ function CustomLink(props) {
   const [showContent, setShowContent] = useState(false);
 
   return (
-    <header className={props.link.dropdown ? "dropdown" : null}>
+    <div className={props.link.dropdown ? "dropdown" : null}>
       <div className="dropdown-showing">
         <Link to={props.link.path} className={props.isActive(props.link)}>
           {props.link.name}
@@ -41,7 +41,7 @@ function CustomLink(props) {
           </div>
         </>
       )}
-    </header>
+    </div>
   );
 }
 
@@ -120,6 +120,25 @@ export default function Header() {
             link={link}
           ></CustomLink>
         ))}
+        {isMobileNav&&<div className="navbar-social-container">
+          <div className="social-media-icon">
+            <Link to="#">
+              <FaFacebook className="social-icon" />
+            </Link>
+            <Link to="#">
+              <FaTwitter className="social-icon" />
+            </Link>
+            <Link to="">
+              {" "}
+              <FaInstagram className="social-icon" />
+            </Link>
+          </div>
+          <div className="navbar-social">
+            <Link className="contact-us-button" to="/contact">
+              Contact Us
+            </Link>
+          </div>
+        </div>}
       </div>
     </div>
   );
