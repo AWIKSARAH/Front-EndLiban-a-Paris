@@ -186,17 +186,17 @@
 }
 
 #mobile-menu.is-active .bar:nth-child(1) {
-  -webkit-transform: translateY(8px) rotate(45deg);
-  -ms-transform: translateY(8px) rotate(45deg);
-  -o-transform: translateY(8px) rotate(45deg);
-  transform: translateY(8px) rotate(45deg);
+  -webkit-transform: translateY(15px) rotate(45deg);
+  -ms-transform: translateY(15px) rotate(45deg);
+  -o-transform: translateY(15px) rotate(45deg);
+  transform: translateY(15px) rotate(45deg);
 }
 
 #mobile-menu.is-active .bar:nth-child(3) {
-  -webkit-transform: translateY(-8px) rotate(-45deg);
-  -ms-transform: translateY(-8px) rotate(-45deg);
-  -o-transform: translateY(-8px) rotate(-45deg);
-  transform: translateY(-8px) rotate(-45deg);
+  -webkit-transform: translateY(-15px) rotate(-45deg);
+  -ms-transform: translateY(-15px) rotate(-45deg);
+  -o-transform: translateY(-15px) rotate(-45deg);
+  transform: translateY(-15px) rotate(-45deg);
 }
 
 /* KEYFRAME ANIMATIONS */
@@ -313,15 +313,12 @@
   .last-header-navbar.mobile-version .dropdown .dropdown-content {
     padding-left: 20px;
     display: none;
+    animation: dropdown-animation 0.5s ease-in-out;
   }
   .last-header-navbar.mobile-version .dropdown .dropdown-content.show {
     display: block;
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
-  /* Added animation to the dropdown */
-  .last-header-navbar.mobile-version .dropdown .dropdown-content {
-    animation: dropdown-animation 0.5s ease-in-out;
   }
   @keyframes dropdown-animation {
     from {

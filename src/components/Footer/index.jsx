@@ -24,7 +24,6 @@ export default function Footer() {
   };
 
   return (
-    <div>
       <footer className="footer--container">
         <div className='row'>
           <div className='col'>
@@ -104,6 +103,5 @@ export default function Footer() {
         </div>
         <hr></hr>
       </footer>
-    </div>
   );
 }

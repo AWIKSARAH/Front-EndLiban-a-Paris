@@ -17,7 +17,7 @@ function CustomLink(props) {
   const [showContent, setShowContent] = useState(false);
 
   return (
-    <div className={props.link.dropdown ? "dropdown" : null}>
+    <header className={props.link.dropdown ? "dropdown" : null}>
       <div className="dropdown-showing">
         <Link to={props.link.path} className={props.isActive(props.link)}>
           {props.link.name}
@@ -41,7 +41,7 @@ function CustomLink(props) {
           </div>
         </>
       )}
-    </div>
+    </header>
   );
 }
 
