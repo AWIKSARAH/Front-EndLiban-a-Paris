@@ -1,10 +1,49 @@
 import React, { useState } from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaArrowDown,
+  FaChevronDown,
+} from "react-icons/fa";
 import "./header.css";
 import Logo from "../../img/logo.png";
 import Logo2 from "../../img/white-logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { links } from "./links";
+import { IconButton } from "@mui/material";
+
+function CustomLink(props) {
+  const [showContent, setShowContent] = useState(false);
+
+  return (
+    <div className={props.link.dropdown ? "dropdown" : null}>
+      <div className="dropdown-showing">
+        <Link to={props.link.path} className={props.isActive(props.link)}>
+          {props.link.name}
+        </Link>
+        {props.link.dropdown ? (
+          <IconButton onClick={(e) => setShowContent(!showContent)} className="dropdown-button">
+            <FaChevronDown color="white" />
+          </IconButton>
+        ) : (
+          ""
+        )}
+      </div>
+      {props.link.dropdown && (
+        <>
+          <div className={`dropdown-content ${showContent?"show":""}`}>
+            {props.link.dropdown.map((subLink, subIndex) => (
+              <Link key={subIndex} to={subLink.path}>
+                {subLink.name}
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function Header() {
   const [isMobileNav, setIsMobileNav] = useState(false);
@@ -70,22 +109,16 @@ export default function Header() {
         </section>
         <img src={Logo2} alt="logo" width={300}></img>
       </div>
-      <div className="last-header-navbar">
+      <div
+        className={`last-header-navbar ${isMobileNav ? "mobile-version" : ""}`}
+      >
         {links.map((link, index) => (
-          <div key={index} className={link.dropdown ? "dropdown" : null}>
-            <Link to={link.path} className={isActive(link)}>
-              {link.name}
-            </Link>
-            {link.dropdown && (
-              <div className="dropdown-content">
-                {link.dropdown.map((subLink, subIndex) => (
-                  <Link key={subIndex} to={subLink.path}>
-                    {subLink.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          <CustomLink
+            key={index}
+            isMobileNav={isMobileNav}
+            isActive={isActive}
+            link={link}
+          ></CustomLink>
         ))}
       </div>
     </div>
