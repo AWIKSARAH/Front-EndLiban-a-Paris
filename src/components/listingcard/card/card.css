@@ -7,7 +7,7 @@
 }
 
 .cards {
-  border: 0.5px solid rgba(24, 163, 24, 0.479) !important;
+  border: 0.5px solid var(--primary) !important;
   border-radius: calc(var(--curve) * 1px);
   box-shadow: "3px 3px 3px #00000055";
   padding: 0;
@@ -85,7 +85,7 @@
 .card__title {
   font-size: 1em;
   margin: 0 0 0.3em;
-  color: #4f7f33
+  color: var(--primary)
   ;
 }
 

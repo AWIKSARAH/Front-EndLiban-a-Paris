@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../img/logo.png";
 import Logo2 from "../../img/white-logo.png";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isMobileNav, setIsMobileNav] = useState(false);
@@ -22,20 +22,22 @@ export default function Header() {
         </div>
         <div className="navbar-social-container">
           <div className="social-media-icon">
-            <Link  to="#">
+            <Link to="#">
               <FaFacebook className="social-icon" />
             </Link>
-            <Link  to="#">
+            <Link to="#">
               <FaTwitter className="social-icon" />
             </Link>
-            <Link  to="">
+            <Link to="">
               {" "}
               <FaInstagram className="social-icon" />
             </Link>
           </div>
           <div className="navbar-social">
-            <Link  to="">À propos</Link>
-            <Link className="contact-us-button" to="/contact">Contact Us</Link>
+            <Link to="">À propos</Link>
+            <Link className="contact-us-button" to="/contact">
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>
@@ -54,29 +56,31 @@ export default function Header() {
         <img src={Logo2} alt="logo" width={300}></img>
       </div>
       <div className="last-header-navbar">
-        <Link  to="/">Home</Link>
+        <Link to="/">Home</Link>
+        <Link to="/">Blog</Link>
+        <Link to="/">Services</Link>
 
         <div className="dropdown">
-          <Link  to="#" className="dropbtn-agenda">
+          <Link to="#" className="dropbtn-agenda">
             {" "}
             Event
           </Link>
           <div className="dropdown-content">
-            <Link  to="#">Evenements</Link>
-            <Link  to="#">Activities</Link>
-            <Link  to="#">Soirees</Link>
+            <Link to="#">Evenements</Link>
+            <Link to="#">Activities</Link>
+            <Link to="#">Soirees</Link>
           </div>
         </div>
         <div className="dropdown">
           <Link to="/places"> Places</Link>
           <div className="dropdown-content">
-            <Link  to="#">A</Link>
-            <Link  to="#">b</Link>
-            <Link  to="#">c</Link>
+            <Link to="#">A</Link>
+            <Link to="#">b</Link>
+            <Link to="#">c</Link>
           </div>
         </div>
-        <Link className="dr"  to="#">
-          Aboutus
+        <Link className="dr" to="#">
+          About Us
         </Link>
       </div>
     </div>

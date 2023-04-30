@@ -42,7 +42,7 @@
   background-attachment: initial;
   background-origin: initial;
   background-clip: initial;
-  background-color: #4f7f33;
+  background-color: var(--primary);
 }
 
 .contact_us_2 .responsive-container-block {
@@ -81,7 +81,7 @@
 }
 
 .contact_us_2 .container-block.form-wrapper {
-  background-color: #f8ffe9;
+  background-color: var(--secondary);
   max-width: 799px;
   text-align: center;
   padding-top: 50px;
@@ -180,7 +180,7 @@
 
 .contact_us_2 .submit-btn {
   width: 98%;
-  background-color: #4f7f33;
+  background-color: var(--primary);
   height: 60px;
   font-size: 20px;
   font-weight: 700;
@@ -255,12 +255,12 @@
   left: 0px;
   top: 0px;
   height: 300px;
-  background-color: #4f7f33;
+  background-color: var(--primary);
 }
 
 .contact_us_2 .submit-btn:hover{
   transform: scale(1.01);
-  background-color: #bad679;
+  background-color: var(--primary-derv);
   transition: all .3s ease-in-out;
 }
 .contact_us_2 {
