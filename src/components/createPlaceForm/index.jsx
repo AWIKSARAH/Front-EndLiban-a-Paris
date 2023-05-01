@@ -153,12 +153,12 @@ const CreatePlaceForm = () => {
         </div>
 
       </label>
-        <button type="button" onClick={handleAddSocialMedia}>
+        <button name="add-social-media" type="button" onClick={handleAddSocialMedia}>
           Add Social Media
         </button>
       <br />
 
-      <button type="submit">Submit</button>
+      <button name="submit" type="submit">Submit</button>
     </form>
   );
 

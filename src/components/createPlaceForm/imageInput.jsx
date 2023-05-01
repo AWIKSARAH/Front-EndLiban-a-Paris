@@ -13,8 +13,8 @@ import styled from "styled-components";
     cursor: pointer;
     height:650px;
     width:650px;
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 150px;
+    min-height: 150px;
     overflow: hidden;
     `;
     

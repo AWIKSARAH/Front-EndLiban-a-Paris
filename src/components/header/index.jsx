@@ -22,7 +22,7 @@ function CustomLink(props) {
           {props.link.name}
         </Link>
         {props.link.dropdown ? (
-          <IconButton onClick={(e) => setShowContent(!showContent)} className="dropdown-button">
+          <IconButton name="dropdown-button" onClick={(e) => setShowContent(!showContent)} className="dropdown-button">
             <FaChevronDown color="white" />
           </IconButton>
         ) : (

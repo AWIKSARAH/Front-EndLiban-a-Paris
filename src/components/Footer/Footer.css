@@ -146,3 +146,12 @@
     flex-basis: 95%;
   }
 }
+@media (max-width: 200px) {
+.footer--container .col {
+  padding: 0;
+}
+.footer--container .row{
+  width:98%
+}
+
+}

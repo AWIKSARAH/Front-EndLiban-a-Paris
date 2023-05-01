@@ -129,6 +129,7 @@
     flex:66%;
 }
 .days--of_week input{
+    text-align: center!important;
     flex:50%;
 }
 .days--of_week select {
@@ -160,7 +161,6 @@
   }
   .days--of_week div input{
     margin-bottom: 0!important;
-
   }
   .days--of_week select {
     margin-bottom: 0!important;

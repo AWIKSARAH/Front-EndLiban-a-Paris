@@ -354,10 +354,36 @@ display: none;
 
 @media (max-width: 468px) {
   .last-header-navbar {
+  padding:20px 10px;
+  }
+  .middle-header-container img {
+    width: 150px;
+  }
+  .last-header-navbar {
     width: 100%;
   }
 
   .home-wrapper-Container {
     box-shadow: none;
   }
+  .middle-header-container {
+      justify-content: space-between;
+      padding: 10px 5px;
+      width: calc(100% - 10px);
+    }
 }
+@media (max-width: 200px){
+  .middle-header-container {
+      justify-content: space-between;
+      padding: 10px 15px;
+      width: calc(100% - 2px);
+    }
+    .middle-header-container img {
+      width: 100px;
+    }
+    .menu-toggle .bar{
+      width: 25px;
+      height:2.5px;
+      margin: 5px auto;
+    }
+  }
