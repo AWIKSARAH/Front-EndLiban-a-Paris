@@ -3,7 +3,6 @@ import {
   FaFacebook,
   FaTwitter,
   FaInstagram,
-  FaArrowDown,
   FaChevronDown,
 } from "react-icons/fa";
 import "./header.css";
@@ -53,7 +52,7 @@ export default function Header() {
     setIsMobileNav(!isMobileNav);
   };
   const isActive = (link) => {
-    if (link.path === location.pathname) {
+    if (link.path === ("/"+location.pathname.split("/")[1])) {
       return "active";
     }
     if (link.dropdown) {

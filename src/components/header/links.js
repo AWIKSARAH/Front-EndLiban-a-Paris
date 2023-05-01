@@ -10,7 +10,9 @@ export const links = [
   { name: "Places", path: "/places", dropdown: [
     { name: "A", path: "#" },
     { name: "B", path: "#" },
-    { name: "C", path: "#" }
+    { name: "C", path: "#" },
+    { name: "D", path: "#" }
   ]},
+  { name: "Add Listing", path: "/listing" },
   { name: "About Us", path: "/about" }
 ];

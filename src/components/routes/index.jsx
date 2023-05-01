@@ -5,6 +5,8 @@ import About from "../../pages/about";
 import Layout from "../layout";
 import PlacesPage from "../../pages/places";
 import ContactPage from "../contact";
+import SubmitListing from "../../pages/listing";
+import ListingForm from "../listingForm";
 
 export default function AllRouts() {
   return (
@@ -15,6 +17,9 @@ export default function AllRouts() {
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/listing" element={<SubmitListing />} >
+            <Route path="/listing/:table" element={<ListingForm/>}/>
+          </Route>
         </Route>
       </Routes>
     </div>

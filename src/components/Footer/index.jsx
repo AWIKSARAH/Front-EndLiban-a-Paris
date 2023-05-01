@@ -27,7 +27,7 @@ export default function Footer() {
       <footer className="footer--container">
         <div className='row'>
           <div className='col'>
-            <img src={Logo} className='logo-footer' />
+            <img src={Logo} alt="logo" className='logo-footer' />
             <p>A newsletter is Link powerful marketing tool that businesses can use to stay connected with their aud</p>
           </div>
           <div className='col'>

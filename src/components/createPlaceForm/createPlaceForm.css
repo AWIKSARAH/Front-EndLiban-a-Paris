@@ -1,0 +1,180 @@
+.listing--post_form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.listing--post_form h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+.listing--post_form label {
+  flex: 32%;
+}
+
+.listing--post_form input[type="text"],
+.listing--post_form input[type="password"],
+.listing--post_form input[type="date"],
+.listing--post_form input[type="datetime"],
+.listing--post_form input[type="email"],
+.listing--post_form input[type="number"],
+.listing--post_form input[type="search"],
+.listing--post_form input[type="tel"],
+.listing--post_form input[type="time"],
+.listing--post_form input[type="url"],
+.listing--post_form textarea,
+.listing--post_form select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+.listing--post_form input[type="radio"],
+.listing--post_form input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+.listing--post_form select {
+  padding: 6px;
+  border-radius: 2px;
+}
+
+.listing--post_form button {
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  background-color: var(--accent);
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid var(--accent-derv);
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+.listing--post_form button:hover {
+  background-color: var(--accent-derv);
+}
+.listing--form_container .responsive-container-block.container {
+  position: static;
+  min-height: 75px;
+  flex-direction: column;
+  z-index: 2;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+}
+.listing--form_container.contact_us_2 .container-block.form-wrapper {
+  max-width: 1200px;
+}
+
+.listing--post_form fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+.listing--post_form legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+/* .listing--post_form label {
+    display: block;
+    margin-bottom: 8px;
+  } */
+
+.listing--post_form label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.listing--post_form .number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+.text--area_label {
+  flex: 100% !important;
+  width: 100%;
+}
+.listing--post_form > label p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.days--of_week {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.days--of_week div{
+    flex:66%;
+}
+.days--of_week input{
+    flex:50%;
+}
+.days--of_week select {
+  flex: 33%;
+}
+.image_label {
+  flex: 100% !important;
+}
+.social--selector_wrapper {
+  display: flex;
+  flex: 30%;
+}
+
+.social--selector_wrapper input {
+  flex: 60%;
+}
+.social--selector_wrapper select {
+  flex: 33%;
+}
+.days--of_week > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .days--of_week div{
+    display: block;
+    flex: 50%;
+    margin-bottom: 0;
+  }
+  .days--of_week div input{
+    margin-bottom: 0!important;
+
+  }
+  .days--of_week select {
+    margin-bottom: 0!important;
+
+    flex: 50%;
+  }
+  .listing--post_form .form-control {
+    flex: 100%;
+    margin: 0;
+  }
+  .listing--post_form > label {
+    flex: 100%;
+  }
+  .social--selector_wrapper {
+    width: 100%;
+  }
+}
