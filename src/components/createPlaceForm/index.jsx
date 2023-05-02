@@ -87,7 +87,11 @@ const CreatePlaceForm = () => {
     "saturday",
     "sunday",
   ];
-  return (
+  return (<>
+      <h2>
+      {type.charAt(0).toUpperCase() + type.slice(1)}
+
+      </h2>
     <form onSubmit={handleSubmit} className="listing--post_form ">
       <label>
         Title:
@@ -160,6 +164,7 @@ const CreatePlaceForm = () => {
 
       <button name="submit" type="submit">Submit</button>
     </form>
+  </>
   );
 
   function scheduleMapper() {

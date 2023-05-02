@@ -353,6 +353,10 @@ display: none;
 }
 
 @media (max-width: 468px) {
+.menu-toggle .bar {
+  width: 30px;
+  height: 2px;
+}
   .last-header-navbar {
   padding:20px 10px;
   }
@@ -368,7 +372,7 @@ display: none;
   }
   .middle-header-container {
       justify-content: space-between;
-      padding: 10px 5px;
+      padding: 20px;
       width: calc(100% - 10px);
     }
 }

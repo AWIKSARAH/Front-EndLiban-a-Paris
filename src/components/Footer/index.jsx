@@ -7,6 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { links } from '../header/links';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -32,7 +33,7 @@ export default function Footer() {
           </div>
           <div className='col'>
             <h3>
-              office <div className='underline'><span></span></div>
+              office 
             </h3>
             <p>akkar road</p>
             <p>halba akkar</p>
@@ -42,30 +43,20 @@ export default function Footer() {
           </div>
           <div className='col'>
             <h3 className='link-h3'>
-              Links<div className='underline'><span></span></div>
+              Links
             </h3>
             <ul>
-              <li>
-                {' '}
-                <Link to=''>Home</Link>
-              </li>
-              <li>
-                {' '}
-                <Link to=''>Event</Link>
-              </li>
-              <li>
-                {' '}
-                <Link to=''>Place</Link>
-              </li>
-              <li>
-                {' '}
-                <Link to=''>About us</Link>
-              </li>
+              {links.map((link,index)=>{
+                return <li key={index}>
+                <Link to={link.path}>{link.name}</Link>
+
+                </li>
+              })}
             </ul>
           </div>
           <div className='col'>
             <h3>
-              NewsLetter<div className='underline'><span></span></div>
+              NewsLetter
             </h3>
             <form onSubmit={handleSubmit}>
               <FontAwesomeIcon icon={farEnvelope} className='far' />
@@ -76,7 +67,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
-              <button type='submit'>
+              <button type='submit' name="submit-newsletter">
                 <FontAwesomeIcon icon={faArrowRight} className='fas' />
               </button>
             </form>
