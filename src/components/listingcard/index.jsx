@@ -20,12 +20,12 @@ function ListingCard(props) {
           showFirstButton
           showLastButton
           size="small"
-          onChange={handlePageChange} // adding onChange event
+          onChange={handlePageChange}
         />
       </div>
       <div className="card--listing">
         {props.data.map((place) => {
-          const { id, image, title, description, location } = place;
+          const { id, image, title, description, location,status ,tel} = place;
           return (
             <Card
               key={id}
@@ -33,6 +33,9 @@ function ListingCard(props) {
               description={description}
               title={title}
               location={location}
+              status={status}
+              tel={tel}
+              page="event"
             />
           );
         })}

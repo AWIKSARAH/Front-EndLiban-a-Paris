@@ -2,6 +2,8 @@
     padding:1%
 }
 .card--listing {
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
