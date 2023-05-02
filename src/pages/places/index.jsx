@@ -23,3 +23,4 @@ function PlacesPage() {
 }
 
 export default PlacesPage;
+
