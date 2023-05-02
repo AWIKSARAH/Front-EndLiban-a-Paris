@@ -9,7 +9,7 @@ export default function ActionAreaCard(props) {
   return (
 <div className={`restaurant`} style={{borderTop:   status === 'Closed' ? '10px solid #c02a2c' : status === 'Coming Soon' ? '10px solid #2f7509' : '10px solid blue'}}>
       <div className="infos_left">
-        <div className="image_container" style={{ backgroundImage: `url(${image})` }}>
+        <div className="image_container" style={{ backgroundImage: `url(http://localhost:50010${image})` }}>
         </div>
         
         <div className="prix_block" style={{backgroundColor: status === 'Closed' ? '#c02a2c' : status === 'Coming Soon' ? '#2f7509' : 'blue', display: page=== 'event' ? 'block' : 'none'}}>
