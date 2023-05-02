@@ -18,9 +18,11 @@ function PlacesPage() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         data={fakeData}
+        page='event'
       />
     </>
   );
 }
 
 export default PlacesPage;
+
