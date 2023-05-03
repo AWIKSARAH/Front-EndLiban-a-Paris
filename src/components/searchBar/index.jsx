@@ -1,16 +1,15 @@
 import { useState } from "react";
 import './search.css'
 export default function SearchInput(props) {
-  const [searchQuery, setSearchQuery] = useState("");
+  // const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (event) => {
     props.setquery(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Do something with the search query
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  // };
 
   return (
     <div className="input-container">

@@ -53,8 +53,7 @@ import { useParams } from "react-router-dom";
           pageCount={pageCount}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          data={fakeData}
-          rd={data}
+          data={data}
           page="event"
         />
       </div>
