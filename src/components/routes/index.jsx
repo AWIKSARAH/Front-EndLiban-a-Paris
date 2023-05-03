@@ -11,7 +11,11 @@ import Cards from "../../pages/listing/cards";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
 
 export default function AllRouts() {
+    
+
+
   return (
+
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
