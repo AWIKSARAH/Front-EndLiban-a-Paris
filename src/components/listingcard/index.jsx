@@ -4,6 +4,7 @@ import "./listingCard.css";
 import { Pagination } from "@mui/material";
 
 function ListingCard(props) {
+  const [localStatus, setLocalStatus] = React.useState("Closed");
   const handlePageChange = (event, value) => {
     props.setCurrentPage(value);
   };
@@ -23,18 +24,46 @@ function ListingCard(props) {
         />
       </div>
       <div className="card--listing">
-        {props.rd.map((place) => {
-          const { id, image, title, description, location, tel } =
-            place;
+        {props.data.map((place) => {
+          const { id, image, title, description, location, tel } = place;
 
           const today = new Date()
             .toLocaleString("en-us", { weekday: "long" })
             .toLowerCase();
-          const sstatus = place.schedule[today].status;
-          const status = sstatus.charAt(0).toUpperCase() + sstatus.slice(1);
+          console.log("today" + today);
+          const [from, to] = place.schedule[today].fromTo.split("-");
+          let timeStatus = "Closed";
 
-          // console.log(`Today is ${today}`);
-          // console.log(` status ${image}`);
+          console.log("from to" + [from, to]); //from to07:00,23:00
+          if (place.schedule[today].status === "open") {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], {
+              timeZone: "Europe/Paris",
+
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false,
+            });
+            console.log("kokoko" + timeString); //kokoko17:29
+            const [hours, minutes] = timeString.split(":");
+            const timeObject = new Date();
+            timeObject.setHours(hours, minutes, 0);
+
+            const [hoursTo, minutesTo] = to.split(":");
+            const timetoObject = new Date();
+            timetoObject.setHours(hoursTo, minutesTo, 0);
+
+            const [hoursFrom, minutesFrom] = from.split(":");
+            const timeFromObject = new Date();
+            timeFromObject.setHours(hoursFrom, minutesFrom, 0);
+
+            if (timeFromObject <= timeObject && timetoObject >= timeObject)
+              console.log("LocalStatus" + localStatus);
+            timeStatus = "Open";
+          } else {
+            timeStatus = "Closed";
+          }
+
           return (
             <Card
               key={id}
@@ -42,7 +71,7 @@ function ListingCard(props) {
               description={description}
               title={title}
               location={location}
-              status={status}
+              status={timeStatus}
               tel={tel}
               page="event"
             />
