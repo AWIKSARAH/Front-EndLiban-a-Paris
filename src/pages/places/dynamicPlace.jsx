@@ -13,10 +13,10 @@ import { useParams } from "react-router-dom";
     const [data, setdata] = useState([]);
     const [query, setquery] = useState('');
   const {type}= useParams()
-    async function fetchPlaces(pageNumber) {
+    async function fetchPlaces() {
       console.log("helloe type"+type);
       try {
-        const response = await axios.get(`http://localhost:50010/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`);
+        const response = await axios.get(`http://localhost:5000/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`);
         // alert('Success');
         console.log(response);
         setdata(response.data.docs)
@@ -30,7 +30,7 @@ import { useParams } from "react-router-dom";
     useEffect(()=>{
   
       fetchPlaces();
-    },[currentPage,query,type])
+    },[currentPage, query, type])
   
     console.log("hon"+query);
     return (

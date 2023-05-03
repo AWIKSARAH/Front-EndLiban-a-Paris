@@ -24,7 +24,7 @@ function ListingCard(props) {
       </div>
       <div className="card--listing">
         {props.rd.map((place) => {
-          const { id, image, title, description, location, tel } =
+          const { _id, image, title, description, location, tel } =
             place;
 
           const today = new Date()
@@ -37,7 +37,7 @@ function ListingCard(props) {
           // console.log(` status ${image}`);
           return (
             <Card
-              key={id}
+              key={_id}
               image={image}
               description={description}
               title={title}

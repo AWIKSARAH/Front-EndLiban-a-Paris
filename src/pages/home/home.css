@@ -1,10 +1,44 @@
-.Wrapp{
-    background-color: #4f7f33;
-
+.Wrapp {
 }
-.white{
-    color:rgb(238, 233, 226);
+.white {
+  margin: 0;
+  color: rgb(238, 233, 226);
 }
-.radios{
-    border-radius: 0.5;
+.radios {
+  border-radius: 0.5;
+}
+.hero-section {
+  background-color: var(--primary);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-section-container {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+.image-section-container img {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.image-section-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+}
+.third-column-image {
+  transform: translateY(-60px);
+}
+.five-column-image {
+    transform: translateY(-80px);
+}
+.first-column-image {
+    transform: translateY(80px);
 }
