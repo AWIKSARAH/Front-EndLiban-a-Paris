@@ -30,7 +30,7 @@ import { useParams } from "react-router-dom";
     useEffect(()=>{
   
       fetchPlaces();
-    },[currentPage,query])
+    },[currentPage,query,type])
   
     console.log("hon"+query);
     return (
