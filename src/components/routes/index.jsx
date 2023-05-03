@@ -8,6 +8,7 @@ import ContactPage from "../contact";
 import SubmitListing from "../../pages/listing";
 import ListingForm from "../listingForm";
 import Cards from "../../pages/listing/cards";
+import DynamicPlacePage from "../../pages/places/dynamicPlace";
 
 export default function AllRouts() {
   return (
@@ -16,11 +17,13 @@ export default function AllRouts() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/places" element={<PlacesPage />} />
+          <Route path="/places" element={<PlacesPage />}>
+            <Route path="/places/:type" element={<DynamicPlacePage/>} />
+          </Route>
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/listing" element={<SubmitListing />} >
-            <Route path="/listing" element={<Cards/>}/>
-            <Route path="/listing/:table" element={<ListingForm/>}/>
+          <Route path="/listing" element={<SubmitListing />}>
+            <Route path="/listing" element={<Cards />} />
+            <Route path="/listing/:table" element={<ListingForm />} />
           </Route>
         </Route>
       </Routes>

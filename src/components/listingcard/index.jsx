@@ -7,7 +7,6 @@ function ListingCard(props) {
   const handlePageChange = (event, value) => {
     props.setCurrentPage(value);
   };
-  console.log(props.rd);
   return (
     <div className="card--listing_container">
       <div className="card--listing_title">

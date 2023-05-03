@@ -8,10 +8,9 @@ export const links = [
     { name: "Soirees", path: "#" }
   ]},
   { name: "Places", path: "/places", dropdown: [
-    { name: "A", path: "#" },
-    { name: "B", path: "#" },
-    { name: "C", path: "#" },
-    { name: "D", path: "#" }
+    { name: "Restaurant", path: "/places/restaurant" },
+    { name: "NGO", path: "/places/ngo" },
+    { name: "Clubs", path: "/places/clubs" },
   ]},
   { name: "Add Listing", path: "/listing" },
   { name: "About Us", path: "/about" }
