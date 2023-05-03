@@ -1,0 +1,136 @@
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ddd;
+}
+.about-container {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+.content-section-about {
+  float: left;
+  width: 55%;
+}
+.content-section-about {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.image-section-about {
+  float: right;
+  width: 40%;
+}
+.image-section-about img {
+  width: 100%;
+  height: auto;
+}
+.content-section-about .about-title {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.content-section-about .content-about h3 {
+  margin-top: 20px;
+  color: #5d5d5d;
+  font-size: 21px;
+}
+.content-section-about .content-about p {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.content-section-about .content-about {
+  margin-top: 30px;
+}
+.content-section-about .content-about .button a {
+  background-color: #3d3d3d;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.content-section-about .content-about .button a:hover {
+  background-color: #a52a2a;
+  color: #fff;
+}
+.content-section-about .social-media-about {
+  margin: 40px 40px;
+}
+.content-section-about .social-media-about i {
+  font-size: 30px;
+  padding: 0px 10px;
+}
+/* .social-media-about i:hover {
+    transform: scale(1.1);
+  } */
+.image-section-about {
+  position: relative;
+  right: -100%;
+  animation: slideIn 1s forwards;
+}
+.image-section-about img:hover {
+  opacity: 0.8;
+}
+
+@keyframes slideIn {
+  to {
+    right: 0;
+  }
+}
+.content-section-about .button a {
+  opacity: 0;
+  animation: fadeInButton 1s forwards;
+}
+
+@keyframes fadeInButton {
+  to {
+    opacity: 1;
+  }
+}
+.content-section-about:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  .about-container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .content-section-about {
+    float: left;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .image-section-about {
+    float: left;
+    width: 100%;
+  }
+  .image-section-about img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  .content-section-about .about-title {
+    text-align: center;
+    font-size: 19px;
+  }
+  .content-section-about .content-about {
+    text-align: center;
+  }
+  .content-section-about .content-about .button a {
+    padding: 9px 30px;
+  }
+  .content-section-about .social-media-about {
+    text-align: center;
+  }
+}
