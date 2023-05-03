@@ -28,6 +28,7 @@ const CreatePlaceForm = () => {
   const locationParam = useLocation();
   const params = new URLSearchParams(locationParam.search);
   const type = params.get("type");
+  console.log(type)
   const handleSocialMediaChange = (index, event) => {
     const { name, value } = event.target;
     const list = [...socialMedia];
