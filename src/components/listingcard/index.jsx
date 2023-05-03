@@ -7,7 +7,7 @@ function ListingCard(props) {
   const handlePageChange = (event, value) => {
     props.setCurrentPage(value);
   };
-
+  console.log(props.rd);
   return (
     <div className="card--listing_container">
       <div className="card--listing_title">
@@ -24,8 +24,18 @@ function ListingCard(props) {
         />
       </div>
       <div className="card--listing">
-        {props.data.map((place) => {
-          const { id, image, title, description, location,status ,tel} = place;
+        {props.rd.map((place) => {
+          const { id, image, title, description, location, tel } =
+            place;
+
+          const today = new Date()
+            .toLocaleString("en-us", { weekday: "long" })
+            .toLowerCase();
+          const sstatus = place.schedule[today].status;
+          const status = sstatus.charAt(0).toUpperCase() + sstatus.slice(1);
+
+          // console.log(`Today is ${today}`);
+          // console.log(` status ${image}`);
           return (
             <Card
               key={id}
