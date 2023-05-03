@@ -72,6 +72,7 @@ const CreatePlaceForm = () => {
         "http://localhost:5000/api/places",
         data
       );
+      console.log(data)
       console.log(createResponse.data);
     } catch (error) {
       console.log(error);
