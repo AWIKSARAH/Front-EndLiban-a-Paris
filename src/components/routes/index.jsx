@@ -11,22 +11,18 @@ import Cards from "../../pages/listing/selectListing";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
 
 export default function AllRouts() {
-    
-
-
   return (
-
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Cards />} />
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />}>
             {/* <Route path="/places"  element={<DynamicPlacePage/>} /> */}
 
-            <Route path=":type" element={<DynamicPlacePage/>} />
-            <Route path="/places" element={<DynamicPlacePage/>} />
-
+            <Route path=":type" element={<DynamicPlacePage />} />
+            <Route path="/places" element={<DynamicPlacePage />} />
           </Route>
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/listing" element={<SubmitListing />}>
