@@ -17,7 +17,7 @@ function DynamicPlacePage() {
     console.log("helloe type" + type);
     try {
       const response = await axios.get(
-        `http://localhost:50010/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`
+        `http://localhost:5000/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`
       );
       // alert('Success');
       console.log(response);
