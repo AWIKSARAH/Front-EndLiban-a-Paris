@@ -29,7 +29,6 @@ export default function Home() {
               src={dabke}
               className="image-1"
               width={240}
-              height={300}
             />
             <br />
           </div>
@@ -39,14 +38,12 @@ export default function Home() {
               src={coffe}
               className="image-1"
               width={180}
-              height={240}
             />
             <img
               alt="lebanese"
               src={kebe}
               className="image-1"
               width={180}
-              height={240}
             />
           </div>
           <div className="third-column-image">
@@ -55,14 +52,12 @@ export default function Home() {
               src={shawerma}
               className="image-1"
               width={200}
-              height={300}
             />
             <img
               alt="lebanese"
               src={Blaklava}
               className="image-1"
               width={200}
-              height={300}
             />
           </div>
           <div className="fourth-column-image">
@@ -71,14 +66,12 @@ export default function Home() {
               src={taboule}
               className="image-1"
               width={180}
-              height={240}
             />
             <img
               alt="lebanese"
               src={wedding}
               className="image-1"
               width={180}
-              height={240}
             />
           </div>
           <div className="five-column-image">
@@ -88,7 +81,6 @@ export default function Home() {
               src={clothing}
               className="image-1"
               width={240}
-              height={300}
             />
           </div>
         </section>
