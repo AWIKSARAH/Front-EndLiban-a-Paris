@@ -10,9 +10,10 @@ export default function About() {
   const [contactInfo, setContactInfo] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/info/')
+    axios.get('http://localhost:5000/api/info')
       .then(response => {
-        setContactInfo(response.data);
+        // console.log(response.data.data[0])
+        setContactInfo(response.data.data[0]);
       })
       .catch(error => {
         console.error(error);
