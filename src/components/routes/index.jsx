@@ -7,7 +7,7 @@ import PlacesPage from "../../pages/places";
 import ContactPage from "../contact";
 import SubmitListing from "../../pages/listing";
 import ListingForm from "../listingForm";
-import Cards from "../../pages/listing/cards";
+import Cards from "../../pages/listing/selectListing";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
 
 export default function AllRouts() {
@@ -19,7 +19,7 @@ export default function AllRouts() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Cards />} />
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />}>
             {/* <Route path="/places"  element={<DynamicPlacePage/>} /> */}

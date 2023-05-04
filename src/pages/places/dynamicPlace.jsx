@@ -6,9 +6,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 function DynamicPlacePage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageCount, setpageCount] = useState(1);
+  const [pageCount, setPageCount] = useState(1);
   const [data, setdata] = useState([]);
-  const [query, setquery] = useState("");
+  const [query, setQuery] = useState("");
   const { type } = useParams();
   const [error, seterror] = useState(false);
   const [res, setresponse] = useState("");
@@ -17,12 +17,12 @@ function DynamicPlacePage() {
     console.log("helloe type" + type);
     try {
       const response = await axios.get(
-        `http://localhost:50010/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`
+        `http://localhost:5000/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`
       );
       // alert('Success');
       console.log(response);
       setdata(response.data.docs);
-      setpageCount(response.data.totalPages);
+      setPageCount(response.data.totalPages);
       seterror(false)
       return response.data;
     } catch (error) {
@@ -34,7 +34,7 @@ function DynamicPlacePage() {
   }
   useEffect(() => {
     fetchPlaces();
-  }, [currentPage, query, type,res]);
+  }, [currentPage, query, type]);
 
   console.log("hon" + query);
   return (
@@ -50,7 +50,7 @@ function DynamicPlacePage() {
       }}
     >
       {" "}
-      <SearchBar setquery={setquery}></SearchBar>
+      <SearchBar setQuery={setQuery}></SearchBar>
       {!error && (
               <ListingCard
               pageTitle="Places"

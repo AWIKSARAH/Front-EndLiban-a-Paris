@@ -1,6 +1,6 @@
 export const links = [
   { name: "Home", path: "/" },
-  { name: "Blog", path: "/" },
+  { name: "Blog", path: "/blog" },
   { name: "Services", path: "/" },
   { name: "Event", path: "#", dropdown: [
     { name: "Evenements", path: "#" },

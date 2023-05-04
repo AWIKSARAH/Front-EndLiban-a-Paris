@@ -30,11 +30,9 @@ function ListingCard(props) {
           const today = new Date()
             .toLocaleString("en-us", { weekday: "long" })
             .toLowerCase();
-          console.log("today" + today);
           const [from, to] = place.schedule[today].fromTo.split("-");
           let timeStatus = "Closed";
 
-          console.log("from to" + [from, to]); //from to07:00,23:00
           if (place.schedule[today].status === "open") {
             const now = new Date();
             const timeString = now.toLocaleTimeString([], {
@@ -44,7 +42,6 @@ function ListingCard(props) {
               minute: "2-digit",
               hour12: false,
             });
-            console.log("kokoko" + timeString); //kokoko17:29
             const [hours, minutes] = timeString.split(":");
             const timeObject = new Date();
             timeObject.setHours(hours, minutes, 0);
@@ -58,7 +55,6 @@ function ListingCard(props) {
             timeFromObject.setHours(hoursFrom, minutesFrom, 0);
 
             if (timeFromObject <= timeObject && timetoObject >= timeObject)
-              console.log("LocalStatus" + localStatus);
             timeStatus = "Open";
           } else {
             timeStatus = "Closed";

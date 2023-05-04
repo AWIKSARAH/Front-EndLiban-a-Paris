@@ -4,7 +4,7 @@ export default function SearchInput(props) {
   // const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (event) => {
-    props.setquery(event.target.value);
+    props.setQuery(event.target.value);
   };
 
   // const handleSubmit = (event) => {
