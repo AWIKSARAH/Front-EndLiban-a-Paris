@@ -19,31 +19,31 @@ function Cards() {
     setCurrentPage(value);
   };
 
-  async function getDataBlog() {
-    try {
-      const params = { page: currentPage, title: query };
-      const response = await get("blog", params);
-      console.log(response);
-      setData(response.data.docs);
-      setPageCount(response.data.totalPages);
-      setError(false);
-      return response.data;
-    } catch (error) {
-      setError(true);
-      if (error.response) {
-        setResponse(error.response.data.message);
-      } else {
-        setResponse(error.message);
-
-        console.log(error);
-      }
-      setError(true);
-
-      return error.response.data.message;
-    }
-  }
-
+  
   useEffect(() => {
+    async function getDataBlog() {
+      try {
+        const params = { page: currentPage, title: query };
+        const response = await get("blog", params);
+        console.log(response);
+        setData(response.data.docs);
+        setPageCount(response.data.totalPages);
+        setError(false);
+        return response.data;
+      } catch (error) {
+        setError(true);
+        if (error.response) {
+          setResponse(error.response.data.message);
+        } else {
+          setResponse(error.message);
+  
+          console.log(error);
+        }
+        setError(true);
+  
+        return error.response.data.message;
+      }
+    }
     getDataBlog();
   }, [currentPage, query]);
 

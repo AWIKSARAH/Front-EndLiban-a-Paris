@@ -19,18 +19,20 @@ function Card(props) {
       style={{
         zIndex: isShowing ? 10 : 1,
       }}
-      onClick={handleClick}
-    >
+      >
       <div className="card__image-holder">
         <img
           className="card__image"
           src={props.imageSrc}
           alt={props.imageAlt}
           preload as="image"
-        />
+          />
       </div>
-      <div className="card-title">
-        <Link href="#" className="toggle-info btn">
+      <div className="card-title"
+      >
+        <Link href="#" className="toggle-info btn"
+        onClick={handleClick}
+        >
           <span className="left"></span>
           <span className="right"></span>
         </Link>

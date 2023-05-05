@@ -6,18 +6,18 @@ function BlogPost() {
   const { id } = useParams();
   const [data, setData] = useState([]);
 
-  async function getDataBlogPost() {
-    try {
-      const response = await get(`blog/${id}`);
-      setData(response.data);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
-  }
   useEffect(() => {
+    async function getDataBlogPost() {
+      try {
+        const response = await get(`blog/${id}`);
+        setData(response.data);
+        console.log(response);
+      } catch (err) {
+        console.log(err);
+      }
+    }
     getDataBlogPost();
-  }, []);
+  }, [id]);
   return (
     <article className="article">
       <div className="article__body">
@@ -26,7 +26,10 @@ function BlogPost() {
         </section>
 
         <section className="text-block rich-text">
-        <span className="blog__header__tag">{data.tag_id?.name}</span>
+          {data.tags?.map(tag=>{
+            return  <span className="blog__header__tag">{tag}</span>
+          })}
+       
 
           <p>{data.description}</p>
         </section>
