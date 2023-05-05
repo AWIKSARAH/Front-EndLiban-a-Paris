@@ -19,7 +19,7 @@ function Cards() {
     setCurrentPage(value);
   };
 
-  async function fetchPlaces() {
+  async function getDataBlog() {
     try {
       const params = { page: currentPage, title: query };
       const response = await get("blog", params);
@@ -34,15 +34,17 @@ function Cards() {
         setResponse(error.response.data.message);
       } else {
         setResponse(error.message);
-      console.log(error);
 
+        console.log(error);
       }
+      setError(true);
+
       return error.response.data.message;
     }
   }
 
   useEffect(() => {
-    fetchPlaces();
+    getDataBlog();
   }, [currentPage, query]);
 
   console.log(data);
@@ -77,10 +79,11 @@ function Cards() {
             {data.map((blogs) => {
               return (
                 <Card
-                  imageSrc={`http://localhost:5000/${blogs.image}`}
+                  imageSrc={`http://localhost:5000${blogs.image}`}
                   imageAlt={blogs.image}
                   title={blogs.title}
                   description={blogs.description}
+                  _id={blogs._id}
                 />
               );
             })}
@@ -99,7 +102,7 @@ function Cards() {
           </div>
         </div>
       )}
-      <h2> ... Somthing Wrong {errorMessage} </h2>
+      {error && <h2> ... Something Wrong {errorMessage} </h2>}
     </div>
   );
 }
