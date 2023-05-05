@@ -17,11 +17,11 @@ export default function AllRouts() {
         <Route path="/" element={<Layout />}>
           <Route path="/blog" element={<SubmitListing />}>
             <Route path="/blog" element={<Cards />} />
-            <Route path="/blog/post/" element={<BlogPost />} />
+            <Route path="/blog/post/:id" element={<BlogPost />} />
           </Route>
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />}>
-            {/* <Route path="/places"  element={<DynamicPlacePage/>} /> */}
+            <Route path="/places" element={<DynamicPlacePage />} />
 
             <Route path=":type" element={<DynamicPlacePage />} />
             <Route path="/places" element={<DynamicPlacePage />} />

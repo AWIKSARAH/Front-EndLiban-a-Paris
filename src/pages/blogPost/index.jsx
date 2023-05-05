@@ -1,24 +1,44 @@
-import React from "react";
-import './blogPost.css'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { get } from "../../common/axios";
+import "./blogPost.css";
 function BlogPost() {
+  const { id } = useParams();
+  const [data, setData] = useState([]);
+
+  async function getDataBlogPost() {
+    try {
+      const response = await get(`blog/${id}`);
+      setData(response.data);
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    getDataBlogPost();
+  }, []);
   return (
     <article className="article">
       <div className="article__body">
         <section className="blog__header">
-          <span className="blog__header__cat">AI & Automation</span>
-          <h1 className="header__title">Lorem ipsum dolor sit amet consectetur.</h1>
+          <h1 className="header__title">{data.title} </h1>
         </section>
 
         <section className="text-block rich-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit.et, consectetur adipisicing elit. Perspiciatis minus perferendis magnam dignissimos ipsa aut facere, laboriosam voluptatem natus illo deserunt doloremque eligendi temporibus ea alias est beatae! Ex praesentium ad vel consequatur eveniet illum iusto enim reprehenderit assumenda molestias ipsa quis, corporis soluta adipisci nihil.
-          </p>
+        <span className="blog__header__tag">{data.tag_id?.name}</span>
+
+          <p>{data.description}</p>
         </section>
       </div>
 
       <div className="article__image">
         <div className="article__image-wrapper">
-          <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80" alt="" />
+          <img
+            src={`http://localhost:5000${data.image}`}
+            alt={data.title}
+            preload as="image"
+          />
         </div>
       </div>
     </article>
