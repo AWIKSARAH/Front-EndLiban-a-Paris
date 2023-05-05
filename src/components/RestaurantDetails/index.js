@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import "./RestaurantDetails.css"
 
 function RestaurantDetails() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function RestaurantDetails() {
     axios
       .get(` http://localhost:5000/api/places/${id}`) 
       .then((response) => {
-        setRestaurant(response.data);
+        setRestaurant(response.data.data);
       })
       .catch((error) => {
         console.error(error);
@@ -21,7 +22,7 @@ function RestaurantDetails() {
     return <div>Loading...</div>;
   }
 
-  const { image, title, description, location } = restaurant;
+  const { image, title, description, location, tel, socialMedia ,tags, email, placeType } = restaurant;
 
   // const today = new Date()
   //   .toLocaleString("en-us", { weekday: "long" })
@@ -58,13 +59,18 @@ function RestaurantDetails() {
   return (
     <div className="restaurant-details">
       <div className="restaurant-details-image">
-        <img src={image} alt={title} />
+        <img src={image} alt={image} />
       </div>
       <div className="restaurant-details-info">
-        <div>ayad</div>
         <h2>{title}</h2>
+        {/* <p>{placeType}</p> */}
         <p>{description}</p>
         <p>{location}</p>
+        <p>{tel}</p>
+        <p>{tags}</p>
+        <p>{email}</p>
+        {/* <p>{url}</p> */}
+        {/* <p>{socialMedia}</p> */}
         {/* <p>Time Status: {timeStatus}</p> */}
       </div>
     </div>

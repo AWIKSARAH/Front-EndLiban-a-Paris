@@ -1,0 +1,33 @@
+.restaurant-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .restaurant-details-image {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .restaurant-details-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .restaurant-details-info {
+    flex: 1 1 auto;
+  }
+  
+  .restaurant-details-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .restaurant-details-info p {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
