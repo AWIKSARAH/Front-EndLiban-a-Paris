@@ -15,6 +15,7 @@ export default function AllRouts() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home/>}/>
           <Route path="/blog" element={<SubmitListing />}>
             <Route path="/blog" element={<Cards />} />
             <Route path="/blog/post/:id" element={<BlogPost />} />
