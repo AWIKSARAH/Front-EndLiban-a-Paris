@@ -17,7 +17,7 @@ export default function ActionAreaCard(props) {
         </div>
         <div className="block_infos">
           <h1>{title}</h1>
-          <div className="adress_block">
+          <div className="adress_block">  
           {" "}
 
           <FontAwesomeIcon icon={faLocationDot} />
