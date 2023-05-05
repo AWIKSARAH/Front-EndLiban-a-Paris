@@ -10,11 +10,14 @@ function DynamicPlacePage() {
   const [data, setdata] = useState([]);
   const [query, setQuery] = useState("");
   const { type } = useParams();
-  const [error, seterror] = useState(false);
-  const [res, setresponse] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMessage, setresponse] = useState("");
 
   async function fetchPlaces() {
     console.log("helloe type" + type);
+    // if(type === undefined) {return type = null;}
+    // console.log("helloe 2" + type);
+    
     try {
       const response = await axios.get(
         `http://localhost:5000/api/places/all?page=${currentPage}&title=${query}&place_type=${type}`
@@ -23,11 +26,11 @@ function DynamicPlacePage() {
       console.log(response);
       setdata(response.data.docs);
       setPageCount(response.data.totalPages);
-      seterror(false)
+      setError(false)
       return response.data;
     } catch (error) {
       console.error(error);
-      seterror(true);
+      setError(true);
       setresponse(error.response.data.message);
       throw error;
     }
@@ -62,7 +65,7 @@ function DynamicPlacePage() {
               />
         )}
 
-          <h2> ... Somthing Wrong {res}  </h2>
+{error && <h2> ... Something Wrong {errorMessage} </h2>}
     </div>
   );
 }
