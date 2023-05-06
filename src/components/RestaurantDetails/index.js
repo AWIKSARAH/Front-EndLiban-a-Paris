@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
-import "./RestaurantDetails.css"
+import { useParams } from "react-router-dom";
+import "./RestaurantDetails.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 function RestaurantDetails() {
   const { id } = useParams();
@@ -9,7 +15,7 @@ function RestaurantDetails() {
 
   useEffect(() => {
     axios
-      .get(` http://localhost:5000/api/places/${id}`) 
+      .get(`http://localhost:5000/api/places/${id}`)
       .then((response) => {
         setRestaurant(response.data.data);
       })
@@ -22,58 +28,54 @@ function RestaurantDetails() {
     return <div>Loading...</div>;
   }
 
-  const { image, title, description, location, tel, socialMedia ,tags, email, placeType } = restaurant;
-
-  // const today = new Date()
-  //   .toLocaleString("en-us", { weekday: "long" })
-  //   .toLowerCase();
-  // const [from, to] = restaurant.schedule[today].fromTo.split("-");
-  // let timeStatus = "Closed";
-
-  // if (restaurant.schedule[today].status === "open") {
-  //   const now = new Date();
-  //   const timeString = now.toLocaleTimeString([], {
-  //     timeZone: "Europe/Paris",
-  //     hour: "2-digit",
-  //     minute: "2-digit",
-  //     hour12: false,
-  //   });
-  //   const [hours, minutes] = timeString.split(":");
-  //   const timeObject = new Date();
-  //   timeObject.setHours(hours, minutes, 0);
-
-  //   const [hoursTo, minutesTo] = to.split(":");
-  //   const timetoObject = new Date();
-  //   timetoObject.setHours(hoursTo, minutesTo, 0);
-
-  //   const [hoursFrom, minutesFrom] = from.split(":");
-  //   const timeFromObject = new Date();
-  //   timeFromObject.setHours(hoursFrom, minutesFrom, 0);
-
-  //   if (timeFromObject <= timeObject && timetoObject >= timeObject)
-  //     timeStatus = "Open";
-  // } else {
-  //   timeStatus = "Closed";
-  // }
+  const {
+    image,
+    title,
+    description,
+    location,
+    tel,
+    socialMedia,
+    tags,
+    email,
+    placeType,
+  } = restaurant;
 
   return (
-    <div className="restaurant-details">
-      <div className="restaurant-details-image">
-        <img src={image} alt={image} />
-      </div>
-      <div className="restaurant-details-info">
-        <h2>{title}</h2>
-        {/* <p>{placeType}</p> */}
-        <p>{description}</p>
-        <p>{location}</p>
-        <p>{tel}</p>
-        <p>{tags}</p>
-        <p>{email}</p>
-        {/* <p>{url}</p> */}
-        {/* <p>{socialMedia}</p> */}
-        {/* <p>Time Status: {timeStatus}</p> */}
+    <div className="restaurant-section">
+      <div className="restaurant-container">
+        <div className="restaurant-image">
+          <img src={`http://localhost:5000${image}`} />
+        </div>
+        <div className="restaurant-info">
+          <div className="restaurant-details">
+            <h3 className="restaurant-title">{title}</h3>
+            <p className="restaurant-description">{description}</p>
+            <p className="restaurant-location">{location}</p>
+            <p className="restaurant-tel">{tel}</p>
+            <p className="restaurant-tags">{tags}</p>
+            <p className="restaurant-email">{email}</p>
+            <div className="restaurant-social-media">
+              {socialMedia.facebook && (
+                <a href={socialMedia.facebook}>
+                  <FontAwesomeIcon icon={faFacebook} size="2x" />
+                </a>
+              )}
+              {socialMedia.instagram && (
+                <a href={socialMedia.instagram}>
+                  <FontAwesomeIcon icon={faInstagram} size="2x" />
+                </a>
+              )}
+              {socialMedia.twitter && (
+                <a href={socialMedia.twitter}>
+                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-export default RestaurantDetails
+
+export default RestaurantDetails;

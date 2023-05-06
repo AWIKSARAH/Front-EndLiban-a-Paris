@@ -1,33 +1,89 @@
+.restaurant-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.restaurant-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+}
+
 .restaurant-details {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.restaurant-description {
+  margin-bottom: 10px;
+}
+
+.restaurant-location,
+.restaurant-tel,
+.restaurant-tags,
+.restaurant-email {
+  margin-bottom: 5px;
+}
+
+.restaurant-social-media {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.restaurant-social-media a {
+  margin-right: 10px;
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .restaurant-container {
+    flex-direction: column;
+  }
+
+  .restaurant-details-image {
+    margin-bottom: 20px;
+  }
+
+  .restaurant-details-info {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .restaurant-container {
+    padding: 0 20px;
   }
   
   .restaurant-details-image {
-    flex: 0 0 auto;
-    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 100%;
   }
-  
-  .restaurant-details-image img {
-    max-width: 100%;
-    height: auto;
-  }
-  
+
   .restaurant-details-info {
-    flex: 1 1 auto;
+    width: 100%;
   }
-  
-  .restaurant-details-info h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
+}
+
+@media only screen and (max-width: 375px) {
+  .restaurant-details-image {
     margin-bottom: 10px;
   }
-  
-  .restaurant-details-info p {
-    font-size: 16px;
-    margin: 0;
-    margin-bottom: 5px;
-  }
-  
+}
