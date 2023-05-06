@@ -12,7 +12,7 @@
   --black:#2d2d2e;
   
 } */
-:root{
+/* :root{
   --primary:#328b3c;
   --primary-derv:#75a758;
   --secondary:#f9f3ed;
@@ -21,7 +21,7 @@
   --accent-derv:#5e2e2f;
   --black:#2d2d2e;
   
-}
+} */
 :root {
   --primary: #297d4b;        /* Dark Sea Green */
   --primary-derv: #56a77b;   /* Lighter shade of Dark Sea Green */

@@ -13,19 +13,10 @@ const Event = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/events/${id}`)
-      .then((response) => setEvent(response.data.data));
+      .then((response) => setEvent(response.data.data)).catch(e=>console.log(e));
   });
   
-function toLocalDate(date){
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  });
 
-}
 
 const formattedStartDate = new Date(event?.start_date).toLocaleDateString("en-US", {
   year: "numeric",

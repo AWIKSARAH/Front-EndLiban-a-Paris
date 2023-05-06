@@ -68,7 +68,6 @@ function RestaurantDetails() {
     tags,
     email,
     schedule,
-    placeType,
   } = restaurant;
 
   return (

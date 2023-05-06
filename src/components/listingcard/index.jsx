@@ -5,7 +5,6 @@ import { Pagination } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 function ListingCard(props) {
-  const [localStatus, setLocalStatus] = React.useState("Closed");
   const handlePageChange = (event, value) => {
     props.setCurrentPage(value);
   };
