@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './search.css'
 export default function SearchInput(props) {
   // const [searchQuery, setSearchQuery] = useState("");
@@ -7,9 +6,6 @@ export default function SearchInput(props) {
     props.setQuery(event.target.value);
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  // };
 
   return (
     <div className="input-container">
