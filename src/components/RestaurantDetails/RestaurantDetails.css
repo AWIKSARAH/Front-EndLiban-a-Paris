@@ -3,6 +3,9 @@
   flex-direction: column;
   margin: 20px;
 }
+.restaurent-wrap{
+  display: flex;
+}
 
 .restaurant-image {
   max-width: 100%;
@@ -13,7 +16,7 @@
 .restaurant-info {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
   margin-left: auto;
 }
 
@@ -22,6 +25,8 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 60%;
+  
 }
 
 .restaurant-title {
@@ -32,6 +37,7 @@
 
 .restaurant-description {
   margin-bottom: 10px;
+  
 }
 
 .restaurant-location,
@@ -51,46 +57,57 @@
   margin-right: 10px;
   color: black;
 }
+.img-rest{
+  object-fit: cover;
+}
+.restaurant-description-title{
+  text-align: center;
+  width: 50%;
+}
+.restaurant-line {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin-top: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
 
-@media only screen and (max-width: 768px) {
-  .restaurant-container {
-    flex-direction: column;
-  }
+.restaurant-description-title:hover .restaurant-line {
+  transform: scaleX(1);
+}
+.schedual-button{
+  border:none !important;
+  font-size: 15px;
+}
+/* .restaurant-image {
+  width: 100%;
 
-  .restaurant-details-image {
-    margin-bottom: 20px;
-  }
-
-  .restaurant-details-info {
-    margin: 0;
-    width: 100%;
+  object-fit: cover;
+} */
+img.img-rest {
+  height: 195px;
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 576px) {
+  .restaurant-image {
+    height: 150px;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .restaurant-container {
-    padding: 0 20px;
+@media (max-width: 768px) {
+  .restaurant-image {
+    height: 250px;
   }
-  
-  .restaurant-details-image {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  .restaurant-details-info {
-    width: 100%;
-  }
+  .restaurant-details {
+    margin-left: 110px;
 }
 
-@media only screen and (max-width: 375px) {
-  .restaurant-details-image {
-    margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .restaurant-image {
+    height: 300px;
   }
-}
-.days-of-week_resto{
-  display: flex;
-  flex-direction: row;
-}
-.days-of-week_resto>h4:first-child{
-  margin-right: 10px;
 }
