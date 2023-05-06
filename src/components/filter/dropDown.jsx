@@ -27,12 +27,13 @@ function MenuList(props) {
     <FormControl>
       <InputLabel htmlFor={props.title} shrink={false} sx={{
           lineHeight: '0.9em',
+        color:"white"
 
       }}>{props.title}</InputLabel>
       <Select
         id={props.title}
         sx={{
-          backgroundColor: '#437c2461',
+          backgroundColor: 'var(--primary)',
           color: "white",
           border: "none",
           borderRadius: "5px",
