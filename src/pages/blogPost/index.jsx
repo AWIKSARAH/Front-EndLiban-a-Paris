@@ -38,7 +38,7 @@ function BlogPost() {
       <div className="article__image">
         <div className="article__image-wrapper">
           <img
-            src={`http://localhost:5000${data.image}`}
+            src={data?.image?.startsWith("http")?data.image:`http://localhost:5000${data.image}`}
             alt={data.title}
             preload as="image"
           />

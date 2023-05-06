@@ -43,7 +43,7 @@ function Card(props) {
         <div className="card-description">{props.description}</div>
         <div className="card-flap flap2">
           <div className="card-actions">
-            <Link to={`post/${props._id}`} className="btn">
+            <Link to={`${props._id}`} className="btn">
               Read more
             </Link>
           </div>

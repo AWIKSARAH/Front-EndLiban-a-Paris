@@ -27,6 +27,7 @@ export default function AllRouts() {
 
 
           {/* Classifieds Routes */}
+          <Route path="/classifieds/:type/:id" element={<BlogPost />} />
           <Route path="/classifieds/:type" element={<Cards />} />
           {/* Deals Routes */}
           <Route path="/deals/:type" element={<Cards />} />

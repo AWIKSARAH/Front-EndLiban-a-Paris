@@ -5,6 +5,7 @@ import { Pagination } from "@mui/material";
 import Card from "./cards";
 import { get } from "../../common/axios";
 import SearchBar from "../../components/searchBar";
+import { useParams } from "react-router";
 
 function Cards() {
   const [data, setData] = useState([]);
@@ -13,6 +14,7 @@ function Cards() {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
   const [pageCount, setPageCount] = useState(1);
+  const {type}=useParams()
 
   const handlePageChange = (event, value) => {
     console.log(value);
@@ -23,7 +25,7 @@ function Cards() {
   useEffect(() => {
     async function getDataBlog() {
       try {
-        const params = { page: currentPage, title: query };
+        const params = { page: currentPage, title: query ,type:type};
         const response = await get("blog", params);
         console.log(response);
         setData(response.data.docs);
@@ -45,7 +47,7 @@ function Cards() {
       }
     }
     getDataBlog();
-  }, [currentPage, query]);
+  }, [currentPage, query, type]);
 
   console.log(data);
   return (
@@ -62,7 +64,7 @@ function Cards() {
     >
       {" "}
       <SearchBar setQuery={setQuery}></SearchBar>
-      {!error && (
+      {!error && data&&(
         <div className="card--listing_container">
           <h2>Blogs</h2>
           <Pagination
@@ -79,9 +81,11 @@ function Cards() {
             {data.map((blogs) => {
               return (
                 <Card
-                  imageSrc={`http://localhost:5000${blogs.image}`}
-                  imageAlt={blogs.image}
+                  imageSrc={blogs.image.startsWith("http")?blogs.image:`http://localhost:5000${blogs.image}`}
+                  imageAlt={blogs.title}
                   title={blogs.title}
+                  height={300}
+                  width={300}
                   description={blogs.description}
                   _id={blogs._id}
                 />
