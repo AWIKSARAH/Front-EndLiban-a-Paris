@@ -2,6 +2,7 @@ import * as React from "react";
 import Card from "./card";
 import "./listingCard.css";
 import { Pagination } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 function ListingCard(props) {
   const [localStatus, setLocalStatus] = React.useState("Closed");
@@ -12,16 +13,6 @@ function ListingCard(props) {
     <div className="card--listing_container">
       <div className="card--listing_title">
         <h2>{props.pageTitle}</h2>
-        <Pagination
-          shape="rounded"
-          color="success"
-          page={props.currentPage}
-          count={props.pageCount || 1}
-          showFirstButton
-          showLastButton
-          size="small"
-          onChange={handlePageChange}
-        />
       </div>
       <div className="card--listing">
         {props.data.map((place) => {
@@ -33,16 +24,17 @@ function ListingCard(props) {
           const timeStatus = (place.schedule[today].status === "open" && from <= now && now <= to) ? "Open" : "Closed";
           
           return (
-            <Card
-              key={_id}
-              image={image}
-              description={description}
-              title={title}
-              location={location}
-              status={timeStatus}
-              tel={tel}
-              page="event"
-            />
+            <Link to={`/restaurant/${_id}`} key={_id}>
+              <Card
+                image={image}
+                description={description}
+                title={title}
+                location={location}
+                status={timeStatus}
+                tel={tel}
+                page="event"
+              />
+            </Link>
           );
         })}
       </div>
@@ -61,5 +53,4 @@ function ListingCard(props) {
     </div>
   );
 }
-
 export default ListingCard;

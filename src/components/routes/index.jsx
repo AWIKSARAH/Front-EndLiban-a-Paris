@@ -10,6 +10,7 @@ import ListingForm from "../listingForm";
 import Cards from "../../pages/listing/selectListing";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
 import BlogPost from "../../pages/blogPost";
+import RestaurantDetails from "../RestaurantDetails";
 export default function AllRouts() {
   return (
     <div>
@@ -32,7 +33,14 @@ export default function AllRouts() {
           {/* News Routes */}
           <Route path="/news/:type" element={<Cards />} />
 
+          <Route path="/restaurant/:id" element={<RestaurantDetails />} />
           
+          <Route path="/about" element={<About />} />
+          <Route path="/places" element={<PlacesPage />}>
+            <Route path=":type" element={<DynamicPlacePage />} />
+            <Route path="/places" element={<DynamicPlacePage />} />
+          </Route>
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/listing" element={<SubmitListing />}>
             {/* <Route path="/listing" element={<Cards />} /> */}
             <Route path="/listing/:table" element={<ListingForm />} />

@@ -13,6 +13,7 @@ function DynamicPlacePage() {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+
   useEffect(() => {
       async function fetchPlaces() {
         
