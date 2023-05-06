@@ -15,23 +15,30 @@ export default function AllRouts() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/blog" element={<SubmitListing />}>
-            <Route path="/blog" element={<Cards />} />
-            <Route path="/blog/post/:id" element={<BlogPost />} />
-          </Route>
-          <Route path="/about" element={<About />} />
-          <Route path="/places" element={<PlacesPage />}>
-            <Route path="/places" element={<DynamicPlacePage />} />
+          <Route path="/" element={<Home />} />
 
-            <Route path=":type" element={<DynamicPlacePage />} />
-            <Route path="/places" element={<DynamicPlacePage />} />
-          </Route>
-          <Route path="/contact" element={<ContactPage />} />
+          {/* Services Routes */}
+          <Route path="/services/:type" element={<DynamicPlacePage />} />
+          {/* Culture Routes */}
+          <Route path="/culture/:type" element={<DynamicPlacePage />} />
+          {/* Adresses Culinaires Routes */}
+          <Route path="/places/:type" element={<DynamicPlacePage />} />
+
+
+          {/* Classifieds Routes */}
+          <Route path="/classifieds/:type" element={<Cards />} />
+          {/* Deals Routes */}
+          <Route path="/deals/:type" element={<Cards />} />
+          {/* News Routes */}
+          <Route path="/news/:type" element={<Cards />} />
+
+          
           <Route path="/listing" element={<SubmitListing />}>
-            <Route path="/listing" element={<Cards />} />
+            {/* <Route path="/listing" element={<Cards />} /> */}
             <Route path="/listing/:table" element={<ListingForm />} />
           </Route>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </div>

@@ -4,6 +4,9 @@ import {
   FaTwitter,
   FaInstagram,
   FaChevronDown,
+  FaHome,
+  FaTiktok,
+  FaYoutube,
 } from "react-icons/fa";
 import "./header.css";
 import Logo from "../../img/logo.png";
@@ -18,7 +21,7 @@ function CustomLink(props) {
   return (
     <div className={props.link.dropdown ? "dropdown" : null}>
       <div className="dropdown-showing">
-        <Link to={props.link.path} className={props.isActive(props.link)}>
+        <Link to={"#"} className={props.isActive(props.link)}>
           {props.link.name}
         </Link>
         {props.link.dropdown ? (
@@ -64,30 +67,35 @@ export default function Header() {
     }
     return " ";
   };
+  console.log(location)
   return (
-    <div
+    <header
       className={`home-wrapper-Container ${isMobileNav ? "mobile-nav" : ""}`}
     >
       <div className="header-container">
         <div className="right-section-header">
           <img src={Logo} alt="logo" width={50} />
-          <p className="first-p-logo">Blog art, culture et voyages</p>
+            <Link to="/about">À propos</Link>
         </div>
         <div className="navbar-social-container">
           <div className="social-media-icon">
-            <Link to="#">
+          <Link to="https://www.facebook.com/Libanaparis"target="_blank">
               <FaFacebook className="social-icon" />
             </Link>
-            <Link to="#">
+            <Link to="https://twitter.com/libanaparis"target="_blank">
               <FaTwitter className="social-icon" />
             </Link>
-            <Link to="">
-              {" "}
+            <Link to="https://instagram.com/libanaparis"target="_blank">
               <FaInstagram className="social-icon" />
+            </Link>
+            <Link to="http://tiktok.com/@libanaparis"target="_blank">
+              <FaTiktok className="social-icon" />
+            </Link>
+            <Link to="https://youtube.com/@libanaparis" target="_blank">
+              <FaYoutube className="social-icon" />
             </Link>
           </div>
           <div className="navbar-social">
-            <Link to="">À propos</Link>
             <Link className="contact-us-button" to="/contact">
               Contact Us
             </Link>
@@ -111,6 +119,7 @@ export default function Header() {
       <div
         className={`last-header-navbar ${isMobileNav ? "mobile-version" : ""}`}
       >
+        <Link to="/" className={location.pathname ==="/"?"active":""} ><FaHome/></Link>
         {links.map((link, index) => (
           <CustomLink
             key={index}
@@ -121,15 +130,20 @@ export default function Header() {
         ))}
         {isMobileNav&&<div className="navbar-social-container">
           <div className="social-media-icon">
-            <Link to="#">
+            <Link to="https://www.facebook.com/Libanaparis">
               <FaFacebook className="social-icon" />
             </Link>
-            <Link to="#">
+            <Link to="https://twitter.com/libanaparis">
               <FaTwitter className="social-icon" />
             </Link>
-            <Link to="">
-              {" "}
+            <Link to="https://instagram.com/libanaparis">
               <FaInstagram className="social-icon" />
+            </Link>
+            <Link to="http://tiktok.com/@libanaparis">
+              <FaTiktok className="social-icon" />
+            </Link>
+            <Link to="https://youtube.com/@libanaparis">
+              <FaYoutube className="social-icon" />
             </Link>
           </div>
           <div className="navbar-social">
@@ -139,6 +153,6 @@ export default function Header() {
           </div>
         </div>}
       </div>
-    </div>
+    </header>
   );
 }

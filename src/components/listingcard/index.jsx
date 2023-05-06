@@ -26,40 +26,12 @@ function ListingCard(props) {
       <div className="card--listing">
         {props.data.map((place) => {
           const { _id, image, title, description, location, tel } = place;
-
-          const today = new Date()
-            .toLocaleString("en-us", { weekday: "long" })
-            .toLowerCase();
-          const [from, to] = place.schedule[today].fromTo.split("-");
-          let timeStatus = "Closed";
-
-          if (place.schedule[today].status === "open") {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString([], {
-              timeZone: "Europe/Paris",
-
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false,
-            });
-            const [hours, minutes] = timeString.split(":");
-            const timeObject = new Date();
-            timeObject.setHours(hours, minutes, 0);
-
-            const [hoursTo, minutesTo] = to.split(":");
-            const timetoObject = new Date();
-            timetoObject.setHours(hoursTo, minutesTo, 0);
-
-            const [hoursFrom, minutesFrom] = from.split(":");
-            const timeFromObject = new Date();
-            timeFromObject.setHours(hoursFrom, minutesFrom, 0);
-
-            if (timeFromObject <= timeObject && timetoObject >= timeObject)
-            timeStatus = "Open";
-          } else {
-            timeStatus = "Closed";
-          }
-
+          
+          const today = new Date().toLocaleString("en-us", { weekday: "long" }).toLowerCase();
+          const [from, to] = place.schedule[today].fromTo?.split("-")||["7:00","18:00"];
+          const now = new Date().toLocaleTimeString("en-US", { hour12: false });
+          const timeStatus = (place.schedule[today].status === "open" && from <= now && now <= to) ? "Open" : "Closed";
+          
           return (
             <Card
               key={_id}

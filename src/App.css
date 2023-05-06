@@ -2,7 +2,7 @@
 *{
   font-family: 'Nunito', sans-serif;
 }
-:root{
+/* :root{
   --primary:#c02a2c;
   --primary-derv:#5e2e2f;
   --secondary:#f7f6f5;
@@ -11,8 +11,8 @@
   --accent-derv:#668e50;
   --black:#2d2d2e;
   
-}
-/* :root{
+} */
+:root{
   --primary:#437c24;
   --primary-derv:#789767;
   --secondary:#f9f3ed;
@@ -21,7 +21,7 @@
   --accent-derv:#5e2e2f;
   --black:#2d2d2e;
   
-} */
+}
 body{
   background-color: var(--secondary);
 }

@@ -15,9 +15,6 @@ function DynamicPlacePage() {
 
   useEffect(() => {
       async function fetchPlaces() {
-        console.log("helloe type" + type);
-        // if(type === undefined) {return type = null;}
-        // console.log("helloe 2" + type);
         
         try {
           const response = await axios.get(
@@ -39,7 +36,6 @@ function DynamicPlacePage() {
     fetchPlaces();
   }, [currentPage, query, type]);
 
-  console.log("hon" + query);
   return (
     <div
       style={{
@@ -54,7 +50,7 @@ function DynamicPlacePage() {
     >
       {" "}
       <SearchBar setQuery={setQuery}></SearchBar>
-      {!error && (
+      {!error &&data&& (
               <ListingCard
               pageTitle="Places"
               pageCount={pageCount}

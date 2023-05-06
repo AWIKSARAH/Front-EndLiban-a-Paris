@@ -8,6 +8,7 @@
   border-radius: 0.5;
 }
 .hero-section {
+  overflow: hidden;
     background:linear-gradient(-35deg,var(--primary) 0%,var(--primary) 25%,var(--secondary) 25%,var(--secondary) 75%,var(--primary) 75%,var(--primary) 100%);
   background-color: var(--primary);
   padding-top: 80px;
