@@ -94,7 +94,7 @@
 
 header a {
   color: var(--secondary);
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   font-weight: 400;
   text-decoration: none;
 }
@@ -271,7 +271,7 @@ display: none;
     left: 0;
     z-index: 100;
     justify-content: space-between;
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     transition: transform 0.3s ease-in-out;
     padding: 20px 40px;
   }
