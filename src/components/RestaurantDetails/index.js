@@ -44,7 +44,7 @@ function RestaurantDetails() {
     <div className="restaurant-section">
       <div className="restaurant-container">
         <div className="restaurant-image">
-          <img src={`http://localhost:5000${image}`} />
+          <img src={image.startsWith("http")?image:`http://localhost:5000${image}`} alt={title}  width={400} height={300}/>
         </div>
         <div className="restaurant-info">
           <div className="restaurant-details">

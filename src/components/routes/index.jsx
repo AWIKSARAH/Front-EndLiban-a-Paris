@@ -9,25 +9,19 @@ import SubmitListing from "../../pages/listing";
 import ListingForm from "../listingForm";
 import Cards from "../../pages/listing/cards";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
-import RestaurantDetails from"../RestaurantDetails"
+import RestaurantDetails from "../RestaurantDetails";
 export default function AllRouts() {
-    
-
-
   return (
-
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />}>
-            
-
-            <Route path=":type" element={<DynamicPlacePage/>} />
-            <Route path="/places" element={<DynamicPlacePage/>} />
+            <Route path=":type" element={<DynamicPlacePage />} />
+            <Route path="/places" element={<DynamicPlacePage />} />
           </Route>
-            <Route path="/restaurant/:id" element={ <RestaurantDetails/> } />
+          <Route path="/restaurant/:id" element={<RestaurantDetails />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/listing" element={<SubmitListing />}>
             <Route path="/listing" element={<Cards />} />
