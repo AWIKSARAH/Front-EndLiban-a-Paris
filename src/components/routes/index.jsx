@@ -9,6 +9,7 @@ import SubmitListing from "../../pages/listing";
 import ListingForm from "../listingForm";
 import Cards from "../../pages/listing/selectListing";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
+import DynamicEventPage from "../../pages/events/dynamicEvent";
 import BlogPost from "../../pages/blogPost";
 import RestaurantDetails from "../RestaurantDetails";
 export default function AllRouts() {
@@ -17,6 +18,10 @@ export default function AllRouts() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
+
+          <Route path="/events/:type" element={<DynamicEventPage />} />
+
+
 
           {/* Services Routes */}
           <Route path="/services/:type" element={<DynamicPlacePage />} />
