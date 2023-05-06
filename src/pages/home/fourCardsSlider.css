@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
   }
   
   .slider-wrapper {
@@ -13,9 +13,9 @@
   .carde {
     margin-right: 20px;
   }
-  .carde .restaurant {
+  /* .carde .restaurant {
     width:100%;
-  }
+  } */
   
   .slider-prev,
   .slider-next {

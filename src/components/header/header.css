@@ -117,6 +117,11 @@ header a {
   color: var(--secondary);
   font-size: 16px;
 }
+.last-header-navbar>div>div.dropdown-showing{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .last-header-navbar a.active::after {
   width: 100%;
   background: var(--secondary);
@@ -171,9 +176,7 @@ header a {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.dropdown-button {
-  display: none!important;
-}
+
 .menu-toggle {
   justify-self: start;
 
@@ -242,10 +245,9 @@ header a {
 .mobile-version .navbar-social-container{
 display: none;
 }
+
 @media (max-width: 800px) {
-  .dropdown-button {
-    display: block!important;
-  }
+
   .menu-toggle,
   .bar {
     display: block !important;
@@ -271,7 +273,7 @@ display: none;
     left: 0;
     z-index: 100;
     justify-content: space-between;
-    transform: translateX(-150%);
+    transform: translateX(-120%);
     transition: transform 0.3s ease-in-out;
     padding: 20px 40px;
   }
@@ -393,4 +395,7 @@ display: none;
       height:2.5px;
       margin: 5px auto;
     }
+  }
+  .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+    font-size: 1rem!important;
   }

@@ -23,5 +23,6 @@
   
 }
 body{
+  overflow: hidden;
   background-color: var(--secondary);
 }
