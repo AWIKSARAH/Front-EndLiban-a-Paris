@@ -41,8 +41,9 @@
 }
 .social-media-icon {
   height: 100%;
-  border-right: 2px solid var(--accent-derv);
+  margin-bottom:10px;
 }
+
 .navbar-social a {
   color: var(--secondary);
   text-decoration: none;
@@ -399,4 +400,7 @@ display: none;
   }
   .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
     font-size: 1rem!important;
+  }
+  .home_button{
+    font-size:1.3rem!important
   }

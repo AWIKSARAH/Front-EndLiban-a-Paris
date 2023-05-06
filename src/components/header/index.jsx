@@ -21,11 +21,15 @@ function CustomLink(props) {
   return (
     <div className={props.link.dropdown ? "dropdown" : null}>
       <div className="dropdown-showing">
-        <Link to={"#"} className={props.isActive(props.link)}>
+        <Link to={"#"} className={"home_buttom " + props.isActive(props.link)}>
           {props.link.name}
         </Link>
         {props.link.dropdown ? (
-          <IconButton name="dropdown-button" onClick={(e) => setShowContent(!showContent)} className="dropdown-button">
+          <IconButton
+            name="dropdown-button"
+            onClick={(e) => setShowContent(!showContent)}
+            className="dropdown-button"
+          >
             <FaChevronDown color="white" />
           </IconButton>
         ) : (
@@ -34,7 +38,7 @@ function CustomLink(props) {
       </div>
       {props.link.dropdown && (
         <>
-          <div className={`dropdown-content ${showContent?"show":""}`}>
+          <div className={`dropdown-content ${showContent ? "show" : ""}`}>
             {props.link.dropdown.map((subLink, subIndex) => (
               <Link key={subIndex} to={subLink.path}>
                 {subLink.name}
@@ -55,7 +59,7 @@ export default function Header() {
     setIsMobileNav(!isMobileNav);
   };
   const isActive = (link) => {
-    if (link.path === ("/"+location.pathname.split("/")[1])) {
+    if (link.path === "/" + location.pathname.split("/")[1]) {
       return "active";
     }
     if (link.dropdown) {
@@ -67,7 +71,7 @@ export default function Header() {
     }
     return " ";
   };
-  console.log(location)
+  console.log(location);
   return (
     <header
       className={`home-wrapper-Container ${isMobileNav ? "mobile-nav" : ""}`}
@@ -75,20 +79,20 @@ export default function Header() {
       <div className="header-container">
         <div className="right-section-header">
           <img src={Logo} alt="logo" width={50} />
-            <Link to="/about">À propos</Link>
+          <Link to="/about">À propos</Link>
         </div>
         <div className="navbar-social-container">
           <div className="social-media-icon">
-          <Link to="https://www.facebook.com/Libanaparis"target="_blank">
+            <Link to="https://www.facebook.com/Libanaparis" target="_blank">
               <FaFacebook className="social-icon" />
             </Link>
-            <Link to="https://twitter.com/libanaparis"target="_blank">
+            <Link to="https://twitter.com/libanaparis" target="_blank">
               <FaTwitter className="social-icon" />
             </Link>
-            <Link to="https://instagram.com/libanaparis"target="_blank">
+            <Link to="https://instagram.com/libanaparis" target="_blank">
               <FaInstagram className="social-icon" />
             </Link>
-            <Link to="http://tiktok.com/@libanaparis"target="_blank">
+            <Link to="http://tiktok.com/@libanaparis" target="_blank">
               <FaTiktok className="social-icon" />
             </Link>
             <Link to="https://youtube.com/@libanaparis" target="_blank">
@@ -119,7 +123,9 @@ export default function Header() {
       <div
         className={`last-header-navbar ${isMobileNav ? "mobile-version" : ""}`}
       >
-        <Link to="/" className={location.pathname ==="/"?"active":""} ><FaHome/></Link>
+        <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+          <FaHome />
+        </Link>
         {links.map((link, index) => (
           <CustomLink
             key={index}
@@ -128,30 +134,32 @@ export default function Header() {
             link={link}
           ></CustomLink>
         ))}
-        {isMobileNav&&<div className="navbar-social-container">
-          <div className="social-media-icon">
-            <Link to="https://www.facebook.com/Libanaparis">
-              <FaFacebook className="social-icon" />
-            </Link>
-            <Link to="https://twitter.com/libanaparis">
-              <FaTwitter className="social-icon" />
-            </Link>
-            <Link to="https://instagram.com/libanaparis">
-              <FaInstagram className="social-icon" />
-            </Link>
-            <Link to="http://tiktok.com/@libanaparis">
-              <FaTiktok className="social-icon" />
-            </Link>
-            <Link to="https://youtube.com/@libanaparis">
-              <FaYoutube className="social-icon" />
-            </Link>
+        {isMobileNav && (
+          <div className="navbar-social-container">
+            <div className="social-media-icon">
+              <Link to="https://www.facebook.com/Libanaparis">
+                <FaFacebook className="social-icon" />
+              </Link>
+              <Link to="https://twitter.com/libanaparis">
+                <FaTwitter className="social-icon" />
+              </Link>
+              <Link to="https://instagram.com/libanaparis">
+                <FaInstagram className="social-icon" />
+              </Link>
+              <Link to="http://tiktok.com/@libanaparis">
+                <FaTiktok className="social-icon" />
+              </Link>
+              <Link to="https://youtube.com/@libanaparis">
+                <FaYoutube className="social-icon" />
+              </Link>
+            </div>
+            <div className="navbar-social">
+              <Link className="contact-us-button" to="/contact">
+                Contact Us
+              </Link>
+            </div>
           </div>
-          <div className="navbar-social">
-            <Link className="contact-us-button" to="/contact">
-              Contact Us
-            </Link>
-          </div>
-        </div>}
+        )}
       </div>
     </header>
   );
