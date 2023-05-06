@@ -80,65 +80,34 @@
   border:none !important;
   font-size: 15px;
 }
-@media only screen and (max-width: 768px) {
-  .restaurant-container {
-    flex-direction: column;
-  }
-
-  .restaurant-details-image {
-    margin-bottom: 20px;
-    
-  }
- img .img-rest {
+/* .restaurant-image {
   width: 100%;
- }
 
-  .restaurant-details-info {
-    margin: 0;
-    width: 100%;
+  object-fit: cover;
+} */
+img.img-rest {
+  height: 195px;
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 576px) {
+  .restaurant-image {
+    height: 150px;
   }
 }
 
-/* Small screens (up to 576px) */
-@media (max-width: 576px) {
-  .restaurant-container {
-    margin: 10px;
-  }
-  .restaurant-info {
-    width: 100%;
-    margin-left: 0;
+@media (max-width: 768px) {
+  .restaurant-image {
+    height: 250px;
   }
   .restaurant-details {
-    margin-left: 0;
-  }
-  .restaurant-title {
-    font-size: 20px;
-  }
-  .restaurant-description-title {
-    width: 100%;
-  }
-  .restaurant-social-media {
-    flex-wrap: wrap;
-  }
+    margin-left: 110px;
 }
 
-/* Medium screens (up to 768px) */
-@media (max-width: 768px) {
-  .restaurant-info {
-    width: 70%;
-  }
 }
 
-/* Large screens (up to 992px) */
 @media (max-width: 992px) {
-  .restaurant-info {
-    width: 60%;
-  }
-}
-
-/* Extra large screens (up to 1200px) */
-@media (max-width: 1200px) {
-  .restaurant-info {
-    width: 50%;
+  .restaurant-image {
+    height: 300px;
   }
 }

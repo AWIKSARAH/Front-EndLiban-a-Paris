@@ -93,8 +93,8 @@ function RestaurantDetails() {
               image.startsWith("http") ? image : `http://localhost:5000${image}`
             }
             alt={title}
-            width={1420}
-            height={300}
+            // width={1420}
+            // height={300}
           />
         </div>
         <div className="restaurent-wrap">
