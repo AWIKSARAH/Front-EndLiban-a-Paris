@@ -21,7 +21,7 @@ function ListingCard(props) {
           const timeStatus = event.status.status;
           
           return (
-            <Link to={`/event/${_id}`} key={_id}>
+            <Link to={`/events/${event.type}/${_id}`} key={_id}>
               <Card
                 image={image}
                 description={description}

@@ -5,6 +5,7 @@ const top10SocialMedia = {
   facebook: <FaFacebook />,
   instagram: <FaInstagram />,
   twitter: <FaTwitter />,
+  linkedIn: <FaLinkedin />,
   linkedin: <FaLinkedin />,
   snapchat: <FaSnapchat />,
   pinterest: <FaPinterest />,
