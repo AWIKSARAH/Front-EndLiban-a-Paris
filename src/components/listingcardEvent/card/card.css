@@ -66,3 +66,40 @@
 a {
   text-decoration: none;
 }
+
+.adress_block  {
+  color: var(--primary);
+  padding: 2px 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.event__info__loc{
+  display: flex !important;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 7%;
+}
+
+
+.status-orange {
+  background-color: orange;
+  color: white;
+}
+
+.status-green {
+  background-color: green;
+  color: white;
+}
+
+.status-red {
+  background-color: red;
+  color: white;
+}
+
+.status-yellow {
+  background-color: yellow;
+  color: black;
+}

@@ -25,7 +25,10 @@ function MenuList(props) {
   console.log(props.title);
   return (
     <FormControl>
-      <InputLabel htmlFor={props.title}>{props.title}</InputLabel>
+      <InputLabel htmlFor={props.title} shrink={false} sx={{
+          lineHeight: '0.9em',
+
+      }}>{props.title}</InputLabel>
       <Select
         id={props.title}
         sx={{
@@ -37,8 +40,8 @@ function MenuList(props) {
           minWidth: "150px",
           fontWeight: "700",
           cursor: "pointer",
-          "&:focus": {
-            color: "#444",
+          "&:active": {
+            bordercolor: "red",
             border: "none",
             boxShadow: "none",
           },
