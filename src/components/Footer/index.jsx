@@ -7,8 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { links } from '../header/links';
-
+import { links } from '../header2/links';
 export default function Footer() {
   const [email, setEmail] = useState('');
 

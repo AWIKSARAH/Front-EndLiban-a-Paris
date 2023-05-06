@@ -23,13 +23,13 @@
   
 } */
 :root {
-  --primary: #297d4b;        /* Dark Sea Green */
-  --primary-derv: #56a77b;   /* Lighter shade of Dark Sea Green */
-  --secondary: #FFFFFF;      /* White */
-  --secondary-derv: #F2F2F2; /* Lighter shade of White */
-  --accent: #cc0000;         /* Dark Red */
-  --accent-derv: #ff5e5e;    /* Lighter shade of Dark Red */
-  --black: #333333;          /* Black */
+  --primary: #297d4b;        
+  --primary-derv: #56a77b;   
+  --secondary: #FFFFFF;      
+  --secondary-derv: #F2F2F2; 
+  --accent: #cc0000;         
+  --accent-derv: #ff5e5e;    
+  --black: #333333;          
 }
 
 
