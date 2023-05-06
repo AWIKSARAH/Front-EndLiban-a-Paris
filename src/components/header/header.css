@@ -97,6 +97,7 @@ header a {
   font-size: 0.9rem;
   font-weight: 400;
   text-decoration: none;
+  white-space: nowrap;
 }
 .last-header-navbar a::after {
   content: "";

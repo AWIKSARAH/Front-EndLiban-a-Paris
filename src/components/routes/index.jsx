@@ -11,6 +11,7 @@ import Cards from "../../pages/listing/selectListing";
 import DynamicPlacePage from "../../pages/places/dynamicPlace";
 import BlogPost from "../../pages/blogPost";
 import RestaurantDetails from "../RestaurantDetails";
+import EventPage from "../../pages/eventPage";
 export default function AllRouts() {
   return (
     <div>
@@ -25,7 +26,6 @@ export default function AllRouts() {
           {/* Adresses Culinaires Routes */}
           <Route path="/places/:type" element={<DynamicPlacePage />} />
 
-
           {/* Classifieds Routes */}
           <Route path="/classifieds/:type/:id" element={<BlogPost />} />
           <Route path="/classifieds/:type" element={<Cards />} />
@@ -35,7 +35,7 @@ export default function AllRouts() {
           <Route path="/news/:type" element={<Cards />} />
 
           <Route path="/restaurant/:id" element={<RestaurantDetails />} />
-          
+
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<PlacesPage />}>
             <Route path=":type" element={<DynamicPlacePage />} />
@@ -46,6 +46,9 @@ export default function AllRouts() {
             {/* <Route path="/listing" element={<Cards />} /> */}
             <Route path="/listing/:table" element={<ListingForm />} />
           </Route>
+          <Route path="/events/:type/:id" element={<EventPage />} />
+          <Route path="/events/:type" element={<EventPage />} />
+
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>

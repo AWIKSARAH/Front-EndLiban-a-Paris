@@ -18,14 +18,12 @@ function BlogPost() {
     }
     getDataBlogPost();
   }, [id]);
-  return (
+  return (<>
     <article className="article">
       <div className="article__body">
-        <section className="blog__header">
-          <h1 className="header__title">{data.title} </h1>
-        </section>
-
+    <section className="blog__header">
         <section className="text-block rich-text">
+          <h2 className="header__title">{data.title} </h2>
           {data.tags?.map(tag=>{
             return  <span className="blog__header__tag">{tag}</span>
           })}
@@ -33,18 +31,19 @@ function BlogPost() {
 
           <p>{data.description}</p>
         </section>
-      </div>
-
-      <div className="article__image">
-        <div className="article__image-wrapper">
           <img
             src={data?.image?.startsWith("http")?data.image:`http://localhost:5000${data.image}`}
             alt={data.title}
-            preload as="image"
+            preloadAs="image"
+            width={600}
+            height={500}
           />
-        </div>
+        </section>
+
       </div>
+
     </article>
+  </>
   );
 }
 
