@@ -8,6 +8,36 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+const days =[
+  {
+    "french": "Lundi",
+    "english": "monday"
+  },
+  {
+    "french": "Mardi",
+    "english": "tuesday"
+  },
+  {
+    "french": "Mercredi",
+    "english": "wednesday"
+  },
+  {
+    "french": "Jeudi",
+    "english": "thursday"
+  },
+  {
+    "french": "Vendredi",
+    "english": "friday"
+  },
+  {
+    "french": "Samedi",
+    "english": "saturday"
+  },
+  {
+    "french": "Dimanche",
+    "english": "sunday"
+  }
+]
 
 function RestaurantDetails() {
   const { id } = useParams();
@@ -37,6 +67,7 @@ function RestaurantDetails() {
     socialMedia,
     tags,
     email,
+    schedule,
     placeType,
   } = restaurant;
 
@@ -71,6 +102,12 @@ function RestaurantDetails() {
                 </a>
               )}
             </div>
+            {days.map(day=>{
+              return <div className="days-of-week_resto">
+                <h4>{day.french}: {" "}</h4>{" "}
+                <h4>{schedule[day.english].status==="open"?schedule[day.english].fromTo:"Closed"}</h4>
+              </div>
+            })}
           </div>
         </div>
       </div>

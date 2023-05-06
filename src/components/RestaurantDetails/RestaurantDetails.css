@@ -87,3 +87,10 @@
     margin-bottom: 10px;
   }
 }
+.days-of-week_resto{
+  display: flex;
+  flex-direction: row;
+}
+.days-of-week_resto>h4:first-child{
+  margin-right: 10px;
+}
