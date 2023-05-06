@@ -61,3 +61,19 @@ export const plansLabel = ["Activités Gratuites", "Invitations Offertes", "Réd
 //same as blog page
 export const blog = ["blog", "tourism", "youth"];
 export const blogLabel = ["Blog", "Tourisme & Voyages", "Jeunesse"];
+
+export const category = [
+  "cinema",
+  "theatre",
+  "exposition",
+  "concert",
+  "enfant",
+  "visite",
+  "guide",
+  "festival",
+  "music",
+  "workshops",
+  "literature",
+  "performance",
+  "webinar",
+]
