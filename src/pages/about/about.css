@@ -1,7 +1,7 @@
 .about-section {
   width: 100%;
   min-height: 100vh;
-  background-color: #ddd;
+  background-color:var(--secondary);
 }
 .about-container {
   width: 80%;
@@ -37,9 +37,11 @@
 }
 .content-section-about .content-about h3 {
   margin-top: 20px;
-  color: #5d5d5d;
-  font-size: 21px;
+  color: var(--black);
+  font-size: 40px;
+font-weight: 900;
 }
+
 .content-section-about .content-about p {
   margin-top: 10px;
   font-family: sans-serif;
@@ -50,26 +52,30 @@
   margin-top: 30px;
 }
 .content-section-about .content-about .button a {
-  background-color: #3d3d3d;
+  background-color: var(--black);
   padding: 12px 40px;
   text-decoration: none;
   color: #fff;
   letter-spacing: 1.5px;
 }
 .content-section-about .content-about .button a:hover {
-  background-color: #a52a2a;
+  background-color: var(--accent);
   color: #fff;
 }
 .content-section-about .social-media-about {
   margin: 40px 40px;
 }
 .content-section-about .social-media-about i {
+  color:var(--accent);
   font-size: 30px;
   padding: 0px 10px;
 }
 /* .social-media-about i:hover {
     transform: scale(1.1);
   } */
+  .content-section-about .social-media-about svg{
+    fill:var(--primary-derv)
+  }
 .image-section-about {
   position: relative;
   right: -100%;
@@ -94,9 +100,7 @@
     opacity: 1;
   }
 }
-.content-section-about:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
+
 @media screen and (max-width: 768px) {
   .about-container {
     width: 80%;

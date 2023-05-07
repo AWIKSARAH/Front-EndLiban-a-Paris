@@ -8,7 +8,7 @@ export default function CardDataGenerator({ children,type }) {
     axios
       .get(`${process.env.REACT_APP_API_URL}${type}/latest`)
       .then((response) => setCards(response.data.data.docs));
-  }, []);
+  }, [type]);
 
   return <>{children(cards)}</>;
 }

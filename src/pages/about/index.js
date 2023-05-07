@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Image from "../../img/FI-for-WP-post.png"
 import axios from 'axios';
 import MoreInfo from "../../components/MoreInfo"
-
+import top10SocialMedia from '../eventPage/socialMedias';
 export default function About() {
   const [contactInfo, setContactInfo] = useState(null);
 
@@ -39,7 +39,7 @@ export default function About() {
           <div className='about-title'> <h1>About Us</h1>
           </div>
           <div className='content-about'> 
-            <h3>static title here</h3> 
+            <h1>A Propos De Liban A Paris</h1> 
             {contactInfo && (
               <p>{contactInfo.aboutUs}</p>
             )}
@@ -57,13 +57,8 @@ export default function About() {
               {contactInfo && contactInfo.socialMedia.map(account => (
                 <i key={account.name}>
                   <Link to={account.url}>
-                    {account.name === 'facebook' ? (
-                      <FaFacebook />
-                    ) : account.name === 'twitter' ? (
-                      <FaTwitter />
-                    ) : account.name === 'instagram' ? (
-                      <FaInstagram />
-                    ) : null}
+                     {top10SocialMedia[account.name.toLowerCase()]}
+                  
                   </Link>
                 </i>
               ))}

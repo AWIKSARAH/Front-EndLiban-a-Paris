@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import Card from "../../components/listingcardEvent/card";
 import "./cardSlider.css";
+import { Link } from "react-router-dom";
 
-export default function Slider({ cards }) {
+export default function Slider({ cards ,to}) {
   const sliderRef = useRef(null);
 
   const handleNext = () => {
@@ -27,17 +28,19 @@ export default function Slider({ cards }) {
     <>
       <div className="slider" ref={sliderRef}>
         {cards.map((card) => (
-          <div key={card.id} className="card">
+          <div key={card._id} className="card">
+            <Link to={`/${to||`events/${card.type}`}/${card._id}`}>
             <Card
               title={card.title}
               image={card.image}
               description={card.description}
               location={card.location}
-              status={card.status?.status||"coming soon"}
+              status={card.status?.status||"New"}
               tel={card.tel}
               tags={card.category}
               page="event"
-            />
+              />
+              </Link>
           </div>
         ))}
       </div>

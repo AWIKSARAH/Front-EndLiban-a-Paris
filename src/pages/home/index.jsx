@@ -27,7 +27,7 @@ export default function Home() {
         <div className="home--page_content">
         
           <CardSlider type="events" heading="OUR LATEST EVENTS"/>
-          <CardSlider type="places" heading="OUR LATEST PLACES ADDITION"/>
+          <CardSlider type="places" heading="OUR LATEST PLACES ADDITION" to="restaurant"/>
         </div>
       </div>
     </>
