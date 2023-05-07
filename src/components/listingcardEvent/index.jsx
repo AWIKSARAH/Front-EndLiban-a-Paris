@@ -5,7 +5,6 @@ import { Pagination } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 function ListingCard(props) {
-  const [localStatus, setLocalStatus] = React.useState("Closed");
   const handlePageChange = (event, value) => {
     props.setCurrentPage(value);
   };
@@ -21,7 +20,7 @@ function ListingCard(props) {
           const timeStatus = event.status.status;
           
           return (
-            <Link to={`/events/${event.type}/${_id}`} key={_id}>
+            <Link style={{textDecoration:"none"}}to={`/events/${event.type}/${_id}`} key={_id}>
               <Card
                 image={image}
                 description={description}
