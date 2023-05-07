@@ -53,7 +53,7 @@ function DynamicPlacePage() {
       <SearchBar setQuery={setQuery}></SearchBar>
       {!error &&data&& (
               <ListingCard
-              pageTitle="Places"
+              pageTitle={type.charAt(0).toUpperCase()+type.slice(1)}
               pageCount={pageCount}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}

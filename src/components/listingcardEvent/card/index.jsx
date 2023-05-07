@@ -13,7 +13,6 @@ export default function Card(props) {
       ? "status-red"
       : "status-yellow";
 
-  console.log(props.status);
   return (
     <div className="event__card">
       <div className="event__header">
@@ -25,6 +24,7 @@ export default function Card(props) {
                 ? props.image
                 : `${process.env.REACT_APP_IMAGE_URL}${props.image}`
             })`,
+            backgroundSize: "cover",
           }}
         >
           <Link to={`/events/${props.tags}`}>
@@ -32,9 +32,10 @@ export default function Card(props) {
           </Link>{" "}
         </div>
         <div className="event__date">
-        <span className={`status ${statusClassName}`}>
-      {props.status}
-    </span>        </div>
+          <span className={`status ${statusClassName}`}>
+            {props.status || "status"}
+          </span>{" "}
+        </div>
       </div>
       <div className="event__info">
         <p href="#" className="event__block">

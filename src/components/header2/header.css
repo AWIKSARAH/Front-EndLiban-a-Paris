@@ -34,6 +34,9 @@
 .header--desktop .top--header_container a {
   font-size: 0.9rem;
 }
+.header--desktop .top--header_container a:hover{
+    color: var(--accent);
+}
 .header--desktop .top--header_container a svg {
   font-size: 1.2rem;
 }
@@ -176,6 +179,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.dropdown-label{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 @media (max-width: 768px) {
   .header--desktop {

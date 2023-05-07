@@ -1,88 +1,35 @@
-import React, { useEffect, useState } from "react";
+import heroImage from "./images/183112.jpg";
 import "./home.css";
-import taboule from "./images/taboule.jpeg";
-import dabke from "./images/dabke.png";
-import kebe from "./images/kibbeh-mish-37-3-261x300.jpg";
-import Blaklava from "./images/blaklava.png";
-import clothing from "./images/clothing.png";
-import wedding from "./images/wedding.png";
-import shawerma from "./images/shawerma.png";
-import coffe from "./images/coffe.png";
-import axios from "axios";
-import Slider from "./fourCardsSlider";
-
+import CardSlider from "./cardSlider";
 export default function Home() {
-  const [cardData,setCardData]= useState([])
-  useEffect(() => {
-    axios.get(`http://localhost:5000/api/places/latest`).then((response) => {setCardData(response.data.data.docs)}).catch(e=>console.log(e));
-  }, []);
   return (
-    <div className="Wrapp">
-      <div className="hero-section">
-        <section className="image-section-container">
-          <div className="first-column-image">
-            <img
-              alt="lebanese"
-              src={dabke}
-              className="image-1"
-              width={240}
-            />
-            <br />
+    <>
+      <div className="home--page_wrapper">
+        <div
+          className="hero--section"
+          style={{ background: `url(${heroImage})` }}
+        >
+          <div className="hero--content">
+            <div className="catchy--phrase">
+              <h1 className="home--page_heading">
+                Savourer les saveurs, embrasser la culture :{" "}
+                <span>Découvrez le Liban à Paris</span>
+              </h1>
+              <h3>
+                Plongez dans une cuisine exquise, participez à des événements
+                vibrants et découvrez la richesse de la culture libanaise au
+                cœur de Paris
+              </h3>
+            </div>
           </div>
-          <div className="second-column-image">
-            <img
-              alt="lebanese"
-              src={coffe}
-              className="image-1"
-              width={180}
-            />
-            <img
-              alt="lebanese"
-              src={kebe}
-              className="image-1"
-              width={180}
-            />
-          </div>
-          <div className="third-column-image">
-            <img
-              alt="lebanese"
-              src={shawerma}
-              className="image-1"
-              width={200}
-            />
-            <img
-              alt="lebanese"
-              src={Blaklava}
-              className="image-1"
-              width={200}
-            />
-          </div>
-          <div className="fourth-column-image">
-            <img
-              alt="lebanese"
-              src={taboule}
-              className="image-1"
-              width={180}
-            />
-            <img
-              alt="lebanese"
-              src={wedding}
-              className="image-1"
-              width={180}
-            />
-          </div>
-          <div className="five-column-image">
-            {/* <img alt="lebanese" src={fayrouz} className="image-1" /> */}
-            <img
-              alt="lebanese"
-              src={clothing}
-              className="image-1"
-              width={240}
-            />
-          </div>
-        </section>
+          {/* <img src={heroImage} alt="Hero Lebanon and France" className="hero--image"/> */}
+        </div>
+        <div className="home--page_content">
+        
+          <CardSlider type="events" heading="OUR LATEST EVENTS"/>
+          <CardSlider type="places" heading="OUR LATEST PLACES ADDITION"/>
+        </div>
       </div>
-     { cardData.length&&<Slider cardData={cardData} cardsPerSlide={4}/>}
-    </div>
+    </>
   );
 }

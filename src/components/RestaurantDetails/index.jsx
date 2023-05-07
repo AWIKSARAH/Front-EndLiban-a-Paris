@@ -13,8 +13,9 @@ import {
   faPhone,
   faTag,
   faEnvelope,
-  faCalendarDays
+  faCalendarDays,
 } from "@fortawesome/free-solid-svg-icons";
+import top10SocialMedia from "../../pages/eventPage/socialMedias";
 
 const days = [
   {
@@ -59,6 +60,7 @@ function RestaurantDetails() {
     axios
       .get(`http://localhost:5000/api/places/${id}`)
       .then((response) => {
+        console.log(response.data.data);
         setRestaurant(response.data.data);
       })
       .catch((error) => {
@@ -81,7 +83,7 @@ function RestaurantDetails() {
     email,
     schedule,
   } = restaurant;
-  
+
   return (
     <div className="restaurant-section">
       <div className="restaurant-container">
@@ -92,7 +94,7 @@ function RestaurantDetails() {
               image.startsWith("http") ? image : `http://localhost:5000${image}`
             }
             alt={title}
-            // width={1420}
+            // width={400}
             // height={300}
           />
         </div>
@@ -100,6 +102,13 @@ function RestaurantDetails() {
           <div className="restaurant-description-title">
             <h3 className="restaurant-title">{title}</h3>
             <div className="restaurant-line"></div>
+            <p className="restaurant-tags">
+            {tags.map((tag) => (
+              <>
+                <span>{tag}</span>
+              </>
+                ))}
+                </p>
             <p className="restaurant-description">{description}</p>
           </div>
           <div className="restaurant-info">
@@ -111,33 +120,26 @@ function RestaurantDetails() {
                 <FontAwesomeIcon icon={faPhone} />
                 {tel}
               </p>
-              <p className="restaurant-tags">
-                <FontAwesomeIcon icon={faTag} />
-                {tags}
-              </p>
               <p className="restaurant-email">
                 <FontAwesomeIcon icon={faEnvelope} />
                 {email}
               </p>
-              <div className="restaurant-social-media">
-                {socialMedia.facebook && (
-                  <a href={socialMedia.facebook}>
-                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                {socialMedia.map((social) => (
+                <div className="restaurant-social-media" key={social.name}>
+                  {top10SocialMedia[social.name.toLowerCase()]}
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.name}
                   </a>
-                )}
-                {socialMedia.instagram && (
-                  <a href={socialMedia.instagram}>
-                    <FontAwesomeIcon icon={faInstagram} size="2x" />
-                  </a>
-                )}
-                {socialMedia.twitter && (
-                  <a href={socialMedia.twitter}>
-                    <FontAwesomeIcon icon={faTwitter} size="2x" />
-                  </a>
-                )}
-              </div>
+                </div>
+              ))}
 
-              <button  className="schedual-button" onClick={toggleSchedule}><FontAwesomeIcon icon={faCalendarDays} /> Schedule</button>
+              <button className="schedual-button" onClick={toggleSchedule}>
+                <FontAwesomeIcon icon={faCalendarDays} /> Schedule
+              </button>
               {showSchedule && (
                 <div>
                   {days.map((day) => (

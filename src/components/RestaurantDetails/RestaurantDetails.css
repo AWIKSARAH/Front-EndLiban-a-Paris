@@ -1,32 +1,34 @@
+.restaurant-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
 .restaurant-container {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-}
-.restaurent-wrap{
-  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .restaurant-image {
-  max-width: 100%;
-  height: auto;
   margin-bottom: 20px;
 }
 
-.restaurant-info {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-left: auto;
+.img-rest {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
 }
 
-.restaurant-details {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-left: 60%;
-  
+.restaurant-description-title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .restaurant-title {
@@ -35,79 +37,152 @@
   margin-bottom: 10px;
 }
 
-.restaurant-description {
+.restaurant-line {
+  width: 40px;
+  height: 2px;
+  background-color: #333333;
+  margin: 0 auto;
   margin-bottom: 10px;
-  
+}
+
+.restaurant-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.restaurant-tags span {
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  margin: 0 5px 5px 0;
+}
+
+.restaurant-description {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.restaurant-info {
+  text-align: center;
+}
+
+.restaurant-details {
+  margin-bottom: 20px;
 }
 
 .restaurant-location,
 .restaurant-tel,
-.restaurant-tags,
 .restaurant-email {
-  margin-bottom: 5px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-location svg,
+.restaurant-tel svg,
+.restaurant-email svg {
+  margin-right: 10px;
 }
 
 .restaurant-social-media {
   display: flex;
-  flex-direction: row;
-  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .restaurant-social-media a {
+  color: #333333;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.restaurant-social-media a:hover {
+  color: #666666;
+}
+
+.schedual-button {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.schedual-button:hover {
+  background-color: #666666;
+}
+
+.days-of-week_resto {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.days-of-week_resto h4 {
+  font-size: 14px;
+  color: #333333;
+}
+@media only screen and (max-width: 600px) {
+  .restaurant-container {
+    padding: 10px;
+  }
+
+  .restaurant-title {
+    font-size: 20px;
+  }
+
+  .restaurant-tags span {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .restaurant-description {
+    font-size: 12px;
+  }
+
+  .schedual-button {
+    padding: 8px 16px;
+  }
+}
+.restaurant-social-media {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.restaurant-social-media div {
+  display: flex;
+  align-items: center;
   margin-right: 10px;
-  color: black;
-}
-.img-rest{
-  object-fit: cover;
-}
-.restaurant-description-title{
-  text-align: center;
-  width: 50%;
-}
-.restaurant-line {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  margin-top: 5px;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
 }
 
-.restaurant-description-title:hover .restaurant-line {
-  transform: scaleX(1);
-}
-.schedual-button{
-  border:none !important;
-  font-size: 15px;
-}
-/* .restaurant-image {
-  width: 100%;
-
-  object-fit: cover;
-} */
-img.img-rest {
-  height: 300px;
-  width: 400px;
-  object-fit: cover;
-}
-@media (max-width: 576px) {
-  .restaurant-image {
-    height: 150px;
-  }
+.restaurant-social-media div a {
+  color: #333333;
+  margin-left: 5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .restaurant-image {
-    height: 250px;
-  }
-  .restaurant-details {
-    margin-left: 110px;
+.restaurant-social-media div svg {
+  width: 20px;
+  height: 20px;
+  color: #333333;
+  transition: color 0.3s ease;
 }
 
+.restaurant-social-media div:hover a,
+.restaurant-social-media div:hover svg {
+  color: #666666;
 }
 
-@media (max-width: 992px) {
-  .restaurant-image {
-    height: 300px;
-  }
+.restaurant-social-media div:last-child {
+  margin-right: 0;
 }

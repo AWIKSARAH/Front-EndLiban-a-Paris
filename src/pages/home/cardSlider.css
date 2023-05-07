@@ -1,0 +1,44 @@
+.card-slider {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card-slider .slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+  }
+  
+  .card-slider .card {
+    flex: 0 0 80%;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-slider .card:hover {
+    transform: scale(1.1);
+  }
+  
+  .card-slider .controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card-slider button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .card-slider  button:hover {
+    background-color: #555;
+  }
+  
