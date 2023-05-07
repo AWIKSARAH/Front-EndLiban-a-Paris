@@ -44,7 +44,8 @@ import styled from "styled-components";
         <>
         <ImageInput
           type="file"
-          id="image"
+            required
+            id="image"
           accept=".jpg,.jpeg,.png"
           onChange={handleImageChange}
         />

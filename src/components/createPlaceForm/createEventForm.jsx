@@ -6,30 +6,26 @@ import {  useNavigate, useParams } from "react-router-dom";
 import ImageInput from "./imageInput";
 import SocialMedia from "./socialMedia";
 import { days } from "./days";
+import { category as categoryList } from "../../common/arraysOfTheEnums/enums";
 
-const CreatePlaceForm = () => {
+const CreateEventForm = () => {
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
   const [tel, setTel] = useState("");
-  const [socialMedia, setSocialMedia] = useState([
-    { name: "facebook", url: "" },
-  ]);
   const [tags, setTags] = useState("");
-  const [schedule, setSchedule] = useState({
-    monday: { status: "closed", fromTo: "" },
-    tuesday: { status: "closed", fromTo: "" },
-    wednesday: { status: "closed", fromTo: "" },
-    thursday: { status: "closed", fromTo: "" },
-    friday: { status: "closed", fromTo: "" },
-    saturday: { status: "closed", fromTo: "" },
-    sunday: { status: "closed", fromTo: "" },
-  });
+  const [website, setWebsite] = useState("")
   const [location, setLocation] = useState("");
   const [image, setImage] = useState("");
-  const navigate = useNavigate()
-
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [category, setCategory] = useState(categoryList[0]);
   const { type } = useParams();
+  const navigate=useNavigate()
+  const [socialMedia, setSocialMedia] = useState([
+      { name: "facebook", url: "" },
+    ]);
+
   const handleSocialMediaChange = (index, event) => {
     const { name, value } = event.target;
     const list = [...socialMedia];
@@ -45,32 +41,35 @@ const CreatePlaceForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("place", image);
+    formData.append("event", image);
 
     try {
       const uploadResponse = await axios.post(
-        "http://localhost:5000/api/files/place",
+        "http://localhost:5000/api/files/event",
         formData
       );
 
       const { image } = uploadResponse.data;
+      console.log(uploadResponse)
       const data = {
         title,
-        email,
+        website,
+        tel,
         description,
-        socialMedia,
-        tags: tags
-          .toString()
-          .split(",")
-          .map((e) => e.trim()),
-        placeType: type,
-        image: image,
+        start_date: startDate,
+        end_date: endDate,
         location,
-        schedule,
-        tel
+        socialMedia,
+        image,
+        tags: tags
+        .toString()
+        .split(",")
+        .map((e) => e.trim()),
+        type,
+        category,
       };
       const createResponse = await axios.post(
-        "http://localhost:5000/api/places",
+        "http://localhost:5000/api/events",
         data
       );
       if(createResponse.data.success){
@@ -94,6 +93,49 @@ const CreatePlaceForm = () => {
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Website:
+          <input
+            type="text"
+            required
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </label>
+        <select
+        name="name"
+        defaultValue={category}
+        onChange={(e) =>setCategory(e.target.value)}
+      >
+        {categoryList.map((option, index) => {
+          return (
+            <option value={option} key={index}>
+              {option.charAt(0).toUpperCase() + option.slice(1)}
+            </option>
+          );
+        })}
+      </select>
+        <br />
+        <label>
+          Start Date:
+          <input
+            type="date"
+            required
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          End Date:
+          <input
+            type="date"
+            required
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
           />
         </label>
         <br />
@@ -150,12 +192,7 @@ const CreatePlaceForm = () => {
         <br />
         <ImageInput setImage={setImage} />
         <br />
-        <label>
-          {" "}
-          <p>Schedule</p>
-          {scheduleMapper()}
-        </label>
-        <br />
+ 
         <label>
           Social Media:
           <div style={{ display: "flex", flexWrap: "wrap", gap: "3%" }}>
@@ -178,16 +215,6 @@ const CreatePlaceForm = () => {
     </div>
   );
 
-  function scheduleMapper() {
-    return days.map((day) => (
-      <ScheduleDay
-        day={day}
-        key={day}
-        schedule={schedule}
-        setSchedule={setSchedule}
-      />
-    ));
-  }
 
   function socialMapper() {
     return socialMedia.map((item, index) => (
@@ -200,4 +227,4 @@ const CreatePlaceForm = () => {
     ));
   }
 };
-export default CreatePlaceForm;
+export default CreateEventForm;

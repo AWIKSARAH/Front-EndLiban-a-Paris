@@ -61,9 +61,11 @@
 }
 /*middle header*/
 .header--desktop .middle--header_container {
+    position: relative;
   text-align: center;
   padding: 20px;
 }
+
 /* bottom header styling */
 .header--desktop .mapped-link-container {
   font-size: 1.2rem;
@@ -184,6 +186,21 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+.header--desktop .middle--header_container a{
+    position: absolute;
+    right: 7%;
+    top: calc(50% - 6px);
+    padding: 5px 10px;
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--secondary);
+
+    }
+.header--desktop .middle--header_container a:hover{
+    background-color: var(--accent-derv);
+    color: var(--secondary);
+    transition: .4s ease-in-out
 }
 @media (max-width: 768px) {
   .header--desktop {

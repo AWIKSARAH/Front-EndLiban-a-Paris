@@ -13,15 +13,15 @@ import BlogPost from "../../pages/blogPost";
 import RestaurantDetails from "../RestaurantDetails";
 import DynamicEventPage from "../../pages/events/dynamicEvent";
 import Event from "../../pages/eventPage";
+import CreatePlaceForm from "../createPlaceForm";
+import CreateEventForm from "../createPlaceForm/createEventForm";
+import Successfully from "../createPlaceForm/success";
 export default function AllRouts() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
-
-
-
 
           {/* Services Routes */}
           <Route path="/services/:type" element={<DynamicPlacePage />} />
@@ -40,6 +40,7 @@ export default function AllRouts() {
           <Route path="/news/:type" element={<Cards />} />
           <Route path="/news/:type/:id" element={<BlogPost />} />
 
+
           <Route path="/restaurant/:id" element={<RestaurantDetails />} />
 
           <Route path="/about" element={<About />} />
@@ -48,11 +49,13 @@ export default function AllRouts() {
             <Route path="/places" element={<DynamicPlacePage />} />
           </Route>
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/listing" element={<SubmitListing />}>
-            {/* <Route path="/listing" element={<Cards />} /> */}
-            <Route path="/listing/:table" element={<ListingForm />} />
-          </Route>
-          <Route path="/events/:type/:id" element={<Event/>} />
+          <Route path="/listing" element={<SubmitListing />} />
+          <Route path="/listing/places/:type" element={<CreatePlaceForm />} />
+          <Route path="/listing/events/:type" element={<CreateEventForm />} />
+          <Route path="/listing/success" element={<Successfully />} />
+
+          {/* events*/}
+          <Route path="/events/:type/:id" element={<Event />} />
           <Route path="/events/:type" element={<DynamicEventPage />} />
 
           <Route path="/about" element={<About />} />

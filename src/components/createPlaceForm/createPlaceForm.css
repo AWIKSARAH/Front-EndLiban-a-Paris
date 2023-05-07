@@ -153,6 +153,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.div--padding{
+padding: 50px 20px;
+}
 @media screen and (max-width: 767px) {
   .days--of_week div{
     display: block;

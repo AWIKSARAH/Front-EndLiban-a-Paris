@@ -40,21 +40,23 @@ function ScheduleDay({ day, schedule, setSchedule }) {
           <option value="closed">Closed</option>
           <option value="open">Open</option>
         </select>
-        <div >
-        <input
-          type="time"
-          placeholder="From"
-          value={schedule[day].fromTime}
-          onChange={handleFromTimeChange}
-          disabled={schedule[day].status === "closed"}
-        />
-        <input
-          type="time"
-          placeholder="To"
-          value={schedule[day].toTime}
-          onChange={handleToTimeChange}
-          disabled={schedule[day].status === "closed"}
-        />
+        <div>
+          <input
+            type="time"
+            placeholder="From"
+            required={schedule[day].status === "open"}
+            value={schedule[day].fromTime}
+            onChange={handleFromTimeChange}
+            disabled={schedule[day].status === "closed"}
+          />
+          <input
+            type="time"
+            required={schedule[day].status === "open"}
+            placeholder="To"
+            value={schedule[day].toTime}
+            onChange={handleToTimeChange}
+            disabled={schedule[day].status === "closed"}
+          />
         </div>
       </label>
     </div>
