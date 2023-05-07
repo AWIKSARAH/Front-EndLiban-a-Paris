@@ -23,7 +23,7 @@
   margin-top: 0.5rem;
 }
 
-.event__image {
+.event__card .event__image {
   width: 100%;
   height: 150px;
   border-radius: 4px;
@@ -31,7 +31,7 @@
   padding: 9px;
 }
 
-.event__tag {
+.event__card .event__tag {
   text-transform: capitalize;
   background-color: rgba(126, 206, 22, 0.425);
   padding: 2px 8px;
@@ -40,7 +40,7 @@
   /* color: var(--primary-derv); */
 }
 
-.event__date {
+.event__card .event__date {
   display: flex;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -48,7 +48,7 @@
   margin: 2px;
 }
 
-.event__title {
+.event__card .event__title {
   display: block;
   color: var(--primary);
   font-size: 1.25rem;
@@ -61,7 +61,7 @@
 }
 
 
-.event__description {
+.event__card  .event__description {
   line-height: 1.375;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -74,11 +74,11 @@
 :link {
   font-style: normal;
 }
-a {
+.event__card a {
   text-decoration: none;
 }
 
-.adress_block  {
+.event__card .adress_block  {
   color: var(--primary);
   padding: 2px 10px;
   border-radius: 5px;
@@ -86,7 +86,7 @@ a {
   flex-direction: column;
   
 }
-.event__info__loc{
+.event__card .event__info__loc{
   display: flex !important;
   align-items: stretch;
   flex-direction: row;
@@ -95,22 +95,22 @@ a {
 }
 
 
-.status-orange {
+.event__card .status-orange {
   background-color: orange;
   color: white;
 }
 
-.status-green {
+.event__card .status-green {
   background-color: green;
   color: white;
 }
 
-.status-red {
+.event__card .status-red {
   background-color: red;
   color: white;
 }
 
-.status-yellow {
+.event__card .status-yellow {
   background-color: yellow;
   color: black;
 }
