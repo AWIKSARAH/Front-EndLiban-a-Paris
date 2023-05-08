@@ -1,5 +1,5 @@
 .event-wrapper {
-  padding: 40px 20px;
+  padding: 40px 9%;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-column-gap: 30px;

@@ -19,12 +19,14 @@ const MappedLinkComponent = () => {
 
   return (
     <div className="mapped-link-container">
-      <div className='dropdown-label has-something'>
+      <span className="dropdown">
+      <div className="dropdown-label">
 
       <Link to="/"  className='something'>
       Page d'accueil
           </Link>
       </div>
+      </span>
       {links.map((link, index) => {
         const isActive = link.dropdown.some((dropdownLink) =>
           location.pathname.includes(dropdownLink.path)

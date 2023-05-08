@@ -334,16 +334,13 @@
   }
 }
 
-.dropdown-label .something:hover {
-  background-color: transparent!important;
-  color: var(--primary-derv)!important;
-}
-.dropdown-label.has-something{
-  height:50px;
-  padding:10px 0!important;
-}
+
 .header--desktop .mapped-link-container a:hover {
-  background-color: var(--accent-derv)!important;
+  background-color: var(--accent-derv);
   color: var(--secondary)important;
   transition: 0.4s ease-in-out!important;
 }
+  .dropdown-label .something:hover {
+    background-color: transparent!important;
+    color: var(--primary-derv)!important;
+  }
