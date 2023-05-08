@@ -62,7 +62,7 @@ function Cards() {
       {" "}
       <SearchBar setQuery={setQuery}></SearchBar>
       {!error && data&&(
-        <div className="card--listing_container">
+        <div className="card--listing_container2">
           <h2>Blogs</h2>
           <Pagination
             shape="rounded"
