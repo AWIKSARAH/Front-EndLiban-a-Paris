@@ -45,25 +45,24 @@ function DynamicEventPage() {
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
-        flexWrap: "nowrap",
+        flexFlow: "column nowrap",
         alignItems: "center",
-        alignContent: "space-between",
-        justifyContent: "flex-start",
-        paddingTop: "50px",
+        placeContent: "space-between flex-start",
+        padding: "50px 7%"
       }}
     >
       {" "}
       <div
         style={{
           display: "flex",
-          width: "70%",
+          width: "100%",
           alignItems: "baseline",
           flexWrap: "nowrap",
           justifyContent: "space-between",
           alignContent: "space-around",
           flexDirection: "row",
           gap: "50%",
+          padding:"10px"
         }}
       >
         <DropDown

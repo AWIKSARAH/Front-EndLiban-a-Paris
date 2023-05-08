@@ -9,7 +9,7 @@
   flex-flow: row wrap;
   max-width: 100%;
   gap:20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .card--listing_title {
   display: flex;

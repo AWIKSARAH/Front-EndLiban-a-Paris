@@ -25,9 +25,15 @@ export default function Home() {
           {/* <img src={heroImage} alt="Hero Lebanon and France" className="hero--image"/> */}
         </div>
         <div className="home--page_content">
-        
-          <CardSlider type="events" heading="OUR LATEST EVENTS"/>
-          <CardSlider type="places" heading="OUR LATEST PLACES ADDITION" to="restaurant"/>
+          <CardSlider
+            type="events"
+            heading="Notre dernier ajout à l'événement"
+          />
+          <CardSlider
+            type="places"
+            heading="Notre dernier resto ajout"
+            to="restaurant"
+          />
         </div>
       </div>
     </>

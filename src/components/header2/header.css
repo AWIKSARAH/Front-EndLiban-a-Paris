@@ -34,8 +34,8 @@
 .header--desktop .top--header_container a {
   font-size: 0.9rem;
 }
-.header--desktop .top--header_container a:hover{
-    color: var(--accent);
+.header--desktop .top--header_container a:hover {
+  color: var(--accent);
 }
 .header--desktop .top--header_container a svg {
   font-size: 1.2rem;
@@ -61,7 +61,7 @@
 }
 /*middle header*/
 .header--desktop .middle--header_container {
-    position: relative;
+  position: relative;
   text-align: center;
   padding: 20px;
 }
@@ -182,25 +182,27 @@
   justify-content: space-between;
   align-items: center;
 }
-.dropdown-label{
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+.dropdown-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
-.header--desktop .mapped-link-container>a{
-    top: calc(50% - 6px);
-    padding: 5px 10px;
-    border: 1px solid var(--accent);
-    background-color: var(--accent);
-    color: var(--secondary);
-
-    }
-.header--desktop .mapped-link-container a:hover{
-    background-color: var(--accent-derv);
-    color: var(--secondary);
-    transition: .4s ease-in-out
+.header--desktop .mapped-link-container > a:last-child {
+  top: calc(50% - 6px);
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--accent);
+  color: var(--secondary);
+}
+.header--desktop .mapped-link-container a:hover {
+  background-color: var(--accent-derv);
+  color: var(--secondary);
+  transition: 0.4s ease-in-out;
+}
+.header--desktop .mapped-link-container > a:first-child:hover {
+  background-color: transparent;
+  color: var(--primary-derv);
 }
 @media (max-width: 768px) {
   .header--desktop {
@@ -243,7 +245,7 @@
   .mobile-menu-content {
     position: absolute;
     top: 100%;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -266,7 +268,7 @@
   .mobile-menu-links a {
     display: block;
     color: var(--secondary);
-      text-decoration: none;
+    text-decoration: none;
   }
 
   .mobile-menu-social {
@@ -324,10 +326,14 @@
     visibility: visible;
     transform: translateY(0);
   }
+  .something {
+    margin-bottom: 10px;
+  }
   .bottom-mobile-menu {
     margin-top: 100px;
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
