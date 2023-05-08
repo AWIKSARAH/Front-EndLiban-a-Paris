@@ -10,7 +10,6 @@ function Card(props) {
   };
   // console.log(new Date(2023, 4, 1, 10, 0));
   const cardClass = isShowing ? "card show" : "card";
-  console.log(props._id);
 
   return (
     <div
@@ -24,7 +23,6 @@ function Card(props) {
           className="card__image"
           src={props.imageSrc}
           alt={props.imageAlt}
-          preload as="image"
           />
       </div>
       <div className="card-title"

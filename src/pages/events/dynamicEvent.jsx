@@ -18,7 +18,6 @@ function DynamicEventPage() {
   const handleItemSelected = (item) => {
     setSelectedItem(item);
   };
-  console.log(type);
 
   useEffect(() => {
     async function fetchEvents() {
@@ -28,7 +27,6 @@ function DynamicEventPage() {
           `http://localhost:5000/api/events/all?page=${currentPage}&q=${selectedItem}&${type?`place_type=${type}`:""}`
         );
         // alert('Success');
-        console.log(response);
         setData(response.data.data.docs);
         setPageCount(response.data.data.totalPages);
         setError(false)
@@ -42,10 +40,7 @@ function DynamicEventPage() {
     }
     fetchEvents();
   }, [currentPage, query, type, selectedItem]);
-  console.log("hiihi" + selectedItem);
-  console.log(pageCount);
-  console.log(pageCount);
-  console.log('q'+query);
+
   return (
     <div
       style={{

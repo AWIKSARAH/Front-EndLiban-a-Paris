@@ -27,9 +27,9 @@ export default function Card(props) {
             backgroundSize: "cover",
           }}
         >
-          <Link to={`/events/${props.tags}`}>
+          {/* <Link to={`/events/${props.tags}`}> */}
             <span className="event__tag">{props.tags}</span>
-          </Link>{" "}
+          {/* </Link>{" "} */}
         </div>
         <div className="event__date">
           <span className={`status ${statusClassName}`}>

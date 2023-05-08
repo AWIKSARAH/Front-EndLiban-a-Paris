@@ -3,9 +3,9 @@ import axios from "axios";
 axios.defaults.baseURL = "http://localhost:5000/api/";
 
 export const get = (endpoint, params = {}, headers = {}) => {
-  console.log("Making GET request to:", endpoint);
-  console.log("With params:", params);
-  console.log("With headers:", headers);
+  // console.log("Making GET request to:", endpoint);
+  // console.log("With params:", params);
+  // console.log("With headers:", headers);
   return axios
     .get(endpoint, { params }, { headers })
     .then((response) => response.data)

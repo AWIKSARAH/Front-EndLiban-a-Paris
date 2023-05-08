@@ -11,7 +11,6 @@ function BlogPost() {
       try {
         const response = await get(`blog/${id}`);
         setData(response.data);
-        console.log(response);
       } catch (err) {
         console.log(err);
       }
@@ -24,8 +23,8 @@ function BlogPost() {
     <section className="blog__header">
         <section className="text-block rich-text">
           <h2 className="header__title">{data.title} </h2>
-          {data.tags?.map(tag=>{
-            return  <span className="blog__header__tag">{tag}</span>
+          {data.tags?.map((tag,index)=>{
+            return  <span key={index}className="blog__header__tag">{tag}</span>
           })}
        
 
@@ -34,7 +33,6 @@ function BlogPost() {
           <img
             src={data?.image?.startsWith("http")?data.image:`http://localhost:5000${data.image}`}
             alt={data.title}
-            preloadAs="image"
             width={600}
             height={500}
           />

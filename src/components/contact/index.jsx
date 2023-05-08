@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./contact.css";
 import emailjs from "emailjs-com";
+import { useNavigate } from "react-router-dom";
 
 function ContactPage() {
   const [formValues, setFormValues] = useState({
@@ -10,6 +11,7 @@ function ContactPage() {
     phoneNumber: "",
     message: "",
   });
+  const navigate=useNavigate()
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -17,6 +19,7 @@ function ContactPage() {
   };
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
     emailjs
       .send(
@@ -28,8 +31,9 @@ function ContactPage() {
       .then(
         (response) => {
           // this.setState({ status: response.status });
-          console.log("SUCCESS!", response);
-          console.log(formValues);
+          // console.log("SUCCESS!", response);
+          // console.log(formValues);
+          navigate("/contact/success")
           // Swal({
           //   title: 'Success',
           //   text: 'The email was sent successfully!',

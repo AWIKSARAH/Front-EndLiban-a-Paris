@@ -60,7 +60,6 @@ function RestaurantDetails() {
     axios
       .get(`http://localhost:5000/api/places/${id}`)
       .then((response) => {
-        console.log(response.data.data);
         setRestaurant(response.data.data);
       })
       .catch((error) => {
@@ -103,10 +102,8 @@ function RestaurantDetails() {
             <h3 className="restaurant-title">{title}</h3>
             <div className="restaurant-line"></div>
             <p className="restaurant-tags">
-            {tags.map((tag) => (
-              <>
-                <span>{tag}</span>
-              </>
+            {tags.map((tag,index) => (
+                <span key={index}>{tag}</span>
                 ))}
                 </p>
             <p className="restaurant-description">{description}</p>
@@ -142,8 +139,8 @@ function RestaurantDetails() {
               </button>
               {showSchedule && (
                 <div>
-                  {days.map((day) => (
-                    <div className="days-of-week_resto">
+                  {days.map((day,index) => (
+                    <div className="days-of-week_resto" key={index}>
                       <h4>{day.french}: </h4>
                       <h4>
                         {schedule[day.english].status === "open"

@@ -22,7 +22,6 @@ function DynamicPlacePage() {
             `http://localhost:5000/api/places/all?page=${currentPage}&title=${query}&${type?`place_type=${type}`:""}`
           );
           // alert('Success');
-          console.log(response);
           setData(response.data.docs);
           setPageCount(response.data.totalPages);
           setError(false)

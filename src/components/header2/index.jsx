@@ -29,12 +29,10 @@ function Header() {
         </div>
         <div className="middle--header_container">
           <img src={Logo2} alt="logo" width={300} />
-          <Link to="/listing" >
-          Ajoutez votre
-          </Link>
         </div>
         <div className="bottom--header_container">
           <MappedLinkComponent />
+          
         </div>
       </div>
       <div className="header--mobile">

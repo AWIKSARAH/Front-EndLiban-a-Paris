@@ -22,7 +22,6 @@ function MenuList(props) {
     );
   });
 
-  console.log(props.title);
   return (
     <FormControl>
       <InputLabel htmlFor={props.title} shrink={false} sx={{

@@ -16,6 +16,7 @@ import Event from "../../pages/eventPage";
 import CreatePlaceForm from "../createPlaceForm";
 import CreateEventForm from "../createPlaceForm/createEventForm";
 import Successfully from "../createPlaceForm/success";
+import SuccessfullyContact from "../contact/success2";
 export default function AllRouts() {
   return (
     <div>
@@ -60,6 +61,7 @@ export default function AllRouts() {
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact/success" element={<SuccessfullyContact />} />
         </Route>
       </Routes>
     </div>

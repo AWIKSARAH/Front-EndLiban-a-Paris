@@ -17,7 +17,6 @@ function Cards() {
   const {type}=useParams()
 
   const handlePageChange = (event, value) => {
-    console.log(value);
     setCurrentPage(value);
   };
 
@@ -27,7 +26,6 @@ function Cards() {
       try {
         const params = { page: currentPage, title: query ,type:type};
         const response = await get("blog", params);
-        console.log(response);
         setData(response.data.docs);
         setPageCount(response.data.totalPages);
         setError(false);
@@ -49,7 +47,6 @@ function Cards() {
     getDataBlog();
   }, [currentPage, query, type]);
 
-  console.log(data);
   return (
     <div
       style={{
@@ -81,6 +78,7 @@ function Cards() {
             {data.map((blogs) => {
               return (
                 <Card
+                key={blogs._id}
                   imageSrc={blogs.image.startsWith("http")?blogs.image:`http://localhost:5000${blogs.image}`}
                   imageAlt={blogs.title}
                   title={blogs.title}
