@@ -9,6 +9,7 @@
 }
 .listing--post_form label {
   flex: 32%;
+  margin-bottom: 20px;
 }
 
 .listing--post_form input[type="text"],

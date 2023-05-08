@@ -83,7 +83,7 @@ const CreateEventForm = () => {
 
 
   return (
-    <div className="div--padding">
+    <div className="div--padding gg">
       <h2>{type?.charAt(0).toUpperCase() + type?.slice(1)}</h2>
       <form onSubmit={handleSubmit} className="listing--post_form ">
         <label>

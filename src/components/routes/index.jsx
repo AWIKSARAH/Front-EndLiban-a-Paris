@@ -51,8 +51,14 @@ export default function AllRouts() {
           </Route>
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/listing" element={<SubmitListing />} />
+          <Route path="/listing/places" element={<ListingForm />} >
+
           <Route path="/listing/places/:type" element={<CreatePlaceForm />} />
+          </Route>
+          <Route path="/listing/events" element={<ListingForm />} >
+
           <Route path="/listing/events/:type" element={<CreateEventForm />} />
+          </Route>
           <Route path="/listing/success" element={<Successfully />} />
 
           {/* events*/}

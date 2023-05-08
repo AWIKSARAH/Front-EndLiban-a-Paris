@@ -1,6 +1,7 @@
 import React from "react";
 import "./listingForm.css";
 import CreatePlaceForm from "../createPlaceForm";
+import { Outlet } from "react-router-dom";
 // import Map from "./map";
 
 const ListingForm = () => {
@@ -13,7 +14,7 @@ const ListingForm = () => {
         <div className="responsive-container-block container">
        
             <div className="container-block form-wrapper form-wrapper2">
-              <CreatePlaceForm/>
+              <Outlet/>
             </div>
         </div>
       </div>
