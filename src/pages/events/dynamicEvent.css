@@ -1,0 +1,13 @@
+.event--listing-container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    place-content: space-between flex-start;
+    padding: 50px 9%;
+}
+@media (max-width: 1200px) {
+.event--listing-container{
+    padding: 50px 5%;
+
+}
+}

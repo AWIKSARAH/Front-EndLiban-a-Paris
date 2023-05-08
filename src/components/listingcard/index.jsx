@@ -13,7 +13,7 @@ function ListingCard(props) {
       <div className="card--listing_title2">
         <h2>{props.pageTitle}</h2>
       </div>
-      <div className="card--listing2">
+      <div className="card--listing">
         {props.data.map((place) => {
           const { _id, image, title, description, location, tel } = place;
           

@@ -5,6 +5,7 @@ import axios from "axios";
 import DropDown from "../../components/filter/dropDown";
 import { category } from "../../common/arraysOfTheEnums/enums";
 import { useParams } from "react-router-dom";
+import "./dynamicEvent.css"
 function DynamicEventPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
@@ -43,13 +44,7 @@ function DynamicEventPage() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexFlow: "column nowrap",
-        alignItems: "center",
-        placeContent: "space-between flex-start",
-        padding: "50px 9%"
-      }}
+      className="event--listing-container"
     >
       {" "}
       <div
@@ -62,7 +57,6 @@ function DynamicEventPage() {
           alignContent: "space-around",
           flexDirection: "row",
           gap: "50%",
-          padding:"10px"
         }}
       >
         <DropDown

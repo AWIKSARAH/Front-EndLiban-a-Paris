@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import "./card.css";
 
 export default function ActionAreaCard(props) {
@@ -20,11 +20,13 @@ export default function ActionAreaCard(props) {
           <div className="adress_block">  
           {" "}
 
+            <span className="adress">
           <FontAwesomeIcon icon={faLocationDot} />
-            <span className="adress">{location}</span>
+              {location}</span>
             {" "}
-            <FontAwesomeIcon icon={faLocationDot} />
-            <span className="adress">{tel}</span>
+            <span className="adress">
+            <FontAwesomeIcon icon={faPhone} />
+              {tel}</span>
           </div>
           <div className="description_block">
             <p>{description}</p>

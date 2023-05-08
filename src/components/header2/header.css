@@ -71,8 +71,13 @@
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   padding: 0 9%;
+}
+@media (max-width: 1200px) {
+  .header--desktop .mapped-link-container{
+    padding: 0 5%;
+  }
 }
 
 .header--desktop .mapped-link-wrapper {
@@ -81,10 +86,10 @@
 }
 
 .header--desktop .dropdown-content {
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   position: absolute;
   background-color: var(--primary-derv);
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 999;
   top: 100%;
@@ -176,12 +181,6 @@
 .header--mobile {
   display: none;
 }
-.dropdown--label {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 .dropdown-label {
   display: flex;
   flex-direction: row;
@@ -189,7 +188,7 @@
   align-items: center;
   padding: 10px 0;
 }
-.header--desktop .mapped-link-container > a:last-child {
+.header--desktop .mapped-link-container> .dropdown-label:last-child a{
   top: calc(50% - 6px);
   padding: 5px 10px;
   border-radius: 10px;
@@ -205,7 +204,7 @@
   background-color: transparent;
   color: var(--primary-derv);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header--desktop {
     display: none;
     font-size: 1rem;
@@ -301,7 +300,7 @@
 /* Existing styles */
 
 /* Add the following styles for mobile dropdown */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header--mobile .mapped-link-wrapper {
     position: relative;
   }
@@ -313,7 +312,8 @@
     left: 0;
     width: 100%;
     background-color: var(--primary-derv);
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 999;
     opacity: 0;
@@ -337,4 +337,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+}
+
+.dropdown-label .something:hover {
+  background-color: transparent!important;
+  color: var(--primary-derv)!important;
+}
+.dropdown-label.has-something{
+  height:50px;
+  padding:10px 0!important;
 }

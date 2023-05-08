@@ -1,7 +1,7 @@
 export const links = [
   {
     //events page
-    name: "Agenda",
+    name: "Liste des activités",
     path: "/events",
     dropdown: [
       { name: "Événements", path: "/events/events" },
@@ -25,7 +25,7 @@ export const links = [
   },
   {
     //dynamic place page for subPaths
-    name: "Culture",
+    name: "Identité culturelle",
     path: "/culture",
     dropdown: [
       { name: "Associations", path: "/culture/associations" },

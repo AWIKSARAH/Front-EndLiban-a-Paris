@@ -38,15 +38,7 @@ function DynamicPlacePage() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flexWrap: "nowrap",
-        alignItems: "center",
-        alignContent: "space-between",
-        justifyContent: "flex-start",
-        paddingTop: "50px",
-      }}
+      className="event--listing-container"
     >
       {" "}
       <SearchBar setQuery={setQuery}></SearchBar>
