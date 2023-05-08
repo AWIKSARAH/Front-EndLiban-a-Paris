@@ -48,7 +48,7 @@ function DynamicEventPage() {
         flexFlow: "column nowrap",
         alignItems: "center",
         placeContent: "space-between flex-start",
-        padding: "50px 7%"
+        padding: "50px 9%"
       }}
     >
       {" "}
