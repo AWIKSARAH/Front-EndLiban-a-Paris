@@ -18,10 +18,7 @@
     scroll-snap-align: start;
     transition: transform 0.3s ease;
   }
-  
-  .card-slider .card:hover {
-    transform: scale(1.1);
-  }
+
   
   .card-slider .controls {
     display: flex;

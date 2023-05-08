@@ -49,15 +49,8 @@ function Cards() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flexWrap: "nowrap",
-        alignItems: "center",
-        alignContent: "space-between",
-        justifyContent: "flex-start",
-        paddingTop: "50px",
-      }}
+
+      className="blog--listing-container"
     >
       {" "}
       <SearchBar setQuery={setQuery}></SearchBar>
@@ -74,7 +67,7 @@ function Cards() {
             size="small"
             onChange={handlePageChange}
           />
-          <div className="cards">
+          <div className="cards-mapper">
             {data.map((blogs) => {
               return (
                 <Card

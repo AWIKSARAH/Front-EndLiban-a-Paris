@@ -195,11 +195,6 @@
   background-color: var(--accent);
   color: var(--secondary);
 }
-.header--desktop .mapped-link-container a:hover {
-  background-color: var(--accent-derv);
-  color: var(--secondary);
-  transition: 0.4s ease-in-out;
-}
 .header--desktop .mapped-link-container > a:first-child:hover {
   background-color: transparent;
   color: var(--primary-derv);
@@ -346,4 +341,9 @@
 .dropdown-label.has-something{
   height:50px;
   padding:10px 0!important;
+}
+.header--desktop .mapped-link-container a:hover {
+  background-color: var(--accent-derv)!important;
+  color: var(--secondary)important;
+  transition: 0.4s ease-in-out!important;
 }

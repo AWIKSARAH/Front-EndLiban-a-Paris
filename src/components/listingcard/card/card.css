@@ -10,6 +10,12 @@ ul {
   cursor: pointer;
   margin-bottom: 20px;
   margin-top: 20px;
+  transition: all .3s ease-in-out;
+}
+.restaurant:hover{
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+
 }
 
 .restaurant .infos_left {
@@ -48,9 +54,6 @@ ul {
   transition: background-size 0.5s;
 }
 
-.restaurant .infos_left:hover .image_container {
-  background-size: 120%;
-}
 
 .restaurant .infos_left .prix_block {
   position: absolute;

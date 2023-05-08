@@ -5,6 +5,11 @@
     0 2px 4px -1px rgba(99, 160, 18, 0.06);
   background-color: rgb(255, 255, 255);
   font-family: sans-serif;
+  transition: all .3s ease-in-out;
+}
+.event__card:hover{
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
 }
 .event__info__loc .adress{
     text-overflow: ellipsis;
