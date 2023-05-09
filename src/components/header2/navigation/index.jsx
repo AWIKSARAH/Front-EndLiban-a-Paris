@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { IconButton } from '@mui/material';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaHome } from 'react-icons/fa';
 
 import { links } from '../links';
 
@@ -23,7 +23,7 @@ const MappedLinkComponent = () => {
       <div className="dropdown-label">
 
       <Link to="/"  className='something'>
-      Page d'accueil
+      <FaHome/>
           </Link>
       </div>
       </span>
